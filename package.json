@@ -1,0 +1,19 @@
+{
+  "name": "diplom",
+  "version": "1.0.0",
+  "description": "ВКР",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirillskvortsov/diplom.git"
+  },
+  "author": "Kirill Skvortsov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kirillskvortsov/diplom/issues"
+  },
+  "homepage": "https://github.com/kirillskvortsov/diplom#readme"
+}
