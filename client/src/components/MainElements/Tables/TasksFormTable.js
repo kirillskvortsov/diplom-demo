@@ -22,7 +22,7 @@ function TasksFormTable(props) {
                         <td>ТТС</td>
                         <td>2498 руб.</td>
                         <td>17.02.2020</td>
-                        <td className="ready">Готово к получению</td>
+                        <td className="green">Готово к получению</td>
                     </tr>
                     <tr>
                         <td>0002514</td>
@@ -30,7 +30,7 @@ function TasksFormTable(props) {
                         <td>ЕвроАвто</td>
                         <td>1073 руб.</td>
                         <td>19.02.2020</td>
-                        <td className="delivered">Доставлено</td>
+                        <td className="orange">Доставлено</td>
                     </tr>
                     <tr>
                         <td>0002515</td>
@@ -38,7 +38,7 @@ function TasksFormTable(props) {
                         <td>ЕвроАвто, ТТС</td>
                         <td>5682 руб.</td>
                         <td>29.02.2020</td>
-                        <td className="waiting">Ожидание отгрузки</td>
+                        <td className="grey">Ожидание отгрузки</td>
                     </tr>
                 </tbody>
             </Table>
