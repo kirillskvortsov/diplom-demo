@@ -1,3 +1,7 @@
+/* ----------------------------------------------------------------------------------------------- */
+/* ------------------------------STYLES FOR ENTIRE PAGE------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 body {
@@ -8,10 +12,57 @@ body {
     line-height: 1.5;
 }
 
+
+li p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
 #root {
     height: 100%;
     width: 100%;
+    display: grid;
+    grid-template-columns: 100px 1fr;
 }
+
+.page-header {
+    color: #535353;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.sub-header {
+    color: #535353;
+    font-size: 32px;
+    font-weight: 300;
+}
+
+input[type='checkbox'] {
+    width:30px;
+    height:30px;
+}
+
+.ready {
+    color: green;
+}
+
+.delivered {
+    color: orange;
+}
+
+.waiting {
+    color: grey;
+}
+/* ----------------------------------------------------------------------------------------------- */
+/* ------------------------------STYLES FOR NAVIGATION BAR---------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
 
 .nav-nav {
     width: 100px;
@@ -52,8 +103,189 @@ body {
     color: white;
 }
 
-li p {
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ------------------------------STYLES FOR MAIN: HOMEPAGE---------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+main {
+    align-self: center; 
+    padding: 50px;   
+}
+
+.home-ul {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    gap: 50px;
+}
+
+.home-img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.home-p {
+    font-size: 30px;
+    font-weight: 500;
+    color: #535353
+}
+
+.home-a:hover {
+    text-decoration: none;
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ------------------------------STYLES FOR TABLES ----------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+
+.table-container {
+    overflow-y: auto;
+    margin-bottom: 0;
+}
+
+.search-table-container {
+    height: 500px;
+}
+
+.table {
+    margin-bottom: 0 !important;
+}
+
+.tasks-table-container {
+    height: 200px;
+    font-size: 14px;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ------------------------------STYLES FOR MAIN: SEARCH------------------------------------------ */
+/* ----------------------------------------------------------------------------------------------- */
+
+.main-search {
+    align-self: flex-start;
+}
+
+.grid-container {
+    display: grid;
+}
+
+.search-entire-page {
+    grid-template-columns: 4fr 5fr;
+    gap: 50px;
+}
+
+.search-container, .filters-container {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    height: 130px;
+}
+
+.search-inputs {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: 20px;
+    align-content: top;
+    justify-content: center;
+    height: 40px;
+}
+
+.search-btn, .apply-btn{
+    height: 38px;
+}
+
+.filter-inputs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-content: top;
+    justify-content: center;
+    height: 40px;
+}
+
+.apply-btn {
+    margin-left: 20px;
+}
+
+.height-48 {
+    height: 48px;
+}
+
+.reserve-btn {
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ------------------------------STYLES FOR MAIN: TASKS------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+.main-tasks {
+    align-self: flex-start;
+}
+
+.search-headers {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-group-name {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.task-card {
+    flex-direction: row !important;
+    align-items: center;
+    height: 60px;
+    font-size: 18px;
+    margin-top: 10px;
+    border-color: rgba(0,0,0,0.5) !important;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+.card-check {
+    margin-right: 10px;
+}
+
+.card-anchor, .card-anchor:hover {  
+    color: black;
+}
+
+.tasks-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px 20px;
+}
+.tasks-form-group {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+}
+
+.tasks-form-input {
+    border-color: rgba(0,0,0,0.3) !important;
+}
+
+.tasks-form-label {
     margin: 0;
-    padding: 0;
-    text-align: center;
+    width: 100px;
+    padding-left: 20px;
+}
+
+#contained-modal-title-vcenter {
+    color: #535353;
+}
+
+.tasks-form-btn {
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+.tasks-form-table-header {
+    font-size: 18px;
+    color: #535353;
 }

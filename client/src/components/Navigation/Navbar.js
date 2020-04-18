@@ -1,12 +1,18 @@
 import React from 'react';
-import NavElement from './NavElement'
-import info from './navElementsInfo'
+import NavElement from './NavElement';
+import info from '../info/navElementsInfo';
 
 function Navbar() {
     return(
-        <nav class="nav-nav">
-            <ul class="nav-ul">
-                {info.map((element) => <NavElement alt={element.alt} src={element.src} text={element.text}/>)}
+        <nav className="nav-nav">
+            <ul className="nav-ul">
+                {info.map((element) => 
+                <NavElement 
+                    alt={element.alt} 
+                    src={element.src} 
+                    text={element.text} 
+                    anchor={element.anchor}
+                />)}
             </ul>
         </nav>
     );
