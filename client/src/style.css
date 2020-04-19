@@ -64,6 +64,12 @@ input[type='checkbox'] {
 .red {
     color: crimson;
 }
+
+input[type="text"]:disabled, input[type="date"]:disabled, input[type="email"]:disabled, input[type="tel"]:disabled, input[type="number"]:disabled {
+    color: black;
+    background-color: inherit;
+}
+
 /* ----------------------------------------------------------------------------------------------- */
 /* ------------------------------STYLES FOR NAVIGATION BAR---------------------------------------- */
 /* ----------------------------------------------------------------------------------------------- */
@@ -171,6 +177,15 @@ main {
     height: 150px;
 }
 
+.table-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.table-select {
+    width: 100px;
+}
 
 /* ----------------------------------------------------------------------------------------------- */
 /* ------------------------------STYLES FOR MAIN: SEARCH------------------------------------------ */
@@ -227,6 +242,12 @@ main {
 .reserve-btn {
     font-size: 12px;
     margin-left: 20px;
+    color: #0069d9;
+}
+
+.reserve-btn:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 
@@ -264,8 +285,13 @@ main {
     margin-right: 10px;
 }
 
-.card-anchor, .card-anchor:hover {  
+.card-anchor {  
     color: black;
+}
+
+.card-anchor:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 .tasks-form {
@@ -376,4 +402,29 @@ main {
 .rush-form-table-header {
     font-size: 18px;
     color: #535353;
+}
+
+.rushTotal {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.rushTotalNumber {
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.rush-form-footer {
+    display: flex;
+    justify-content: space-between !important;
+}
+
+
+.rush-form-footer-left {
+    display: flex;
+    flex-direction: row;
+}
+
+.rush-form-btn-supplier {
+    margin-right: 20px;
 }

@@ -6,11 +6,11 @@ function Task(props) {
         <React.Fragment>
             <h3 className="sub-header task-group-name">{props.header}</h3>
             {props.tasks.map((task) =>
-                <Card className="task-card">
+                <Card className="task-card" key={task.id}>
                     <Card.Body className="card-text">
-                        <a className="card-anchor" href="#" onClick={props.header === "Срочные заказы:" && props.onClickNotification}>
-                            {task}
-                        </a>
+                        <span className="card-anchor" onClick={props.onClickNotification}>
+                            {task.text}
+                        </span>
                     </Card.Body>
                     <Form.Check type="checkbox" className="card-check" />
                 </Card>

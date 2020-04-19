@@ -4,7 +4,7 @@ import RushTable from '../Tables/RushTable.js';
 import RushModal from '../Modals/RushModal';
 
 function RushPage() {
-    const [modalShow, setModalShow] = useState(true);
+    const [modalShow, setModalShow] = useState(false);
 
     return(
         <main className="main main-rush">

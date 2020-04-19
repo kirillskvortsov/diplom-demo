@@ -1,5 +1,6 @@
 const info = [
     {
+        id: 1,
         alt: 'home',
         text: 'Домой',
         src:'assets/home.png',
@@ -7,6 +8,7 @@ const info = [
         srcCard: "assets/wp.png"
     }, 
     {
+        id: 2,
         alt: 'search',
         text: 'Поиск',
         src:'assets/search.png',
@@ -14,6 +16,7 @@ const info = [
         srcCard: "assets/wp.png"
     }, 
     {
+        id: 3,
         alt: 'tasks',
         text: 'Задачи',
         src:'assets/list.png',
@@ -21,6 +24,7 @@ const info = [
         srcCard: "assets/wp.png"
     }, 
     {
+        id: 4,
         alt: 'rush',
         text: 'Срочный заказ',
         src:'assets/timer.png',
@@ -28,6 +32,7 @@ const info = [
         srcCard: "assets/wp.png"
     }, 
     {
+        id: 5,
         alt: 'plan',
         text: 'Плановый заказ',
         src:'assets/plan.png',
@@ -35,6 +40,7 @@ const info = [
         srcCard: "assets/wp.png"
     }, 
     {
+        id: 6,
         alt: 'supplier',
         text: 'Заказ поставщику',
         src:'assets/delivery.png',
@@ -42,6 +48,7 @@ const info = [
         srcCard: "assets/wp.png"
     }, 
     {
+        id: 7,
         alt: 'analytics',
         text: 'Аналитика',
         src:'assets/chart.png',

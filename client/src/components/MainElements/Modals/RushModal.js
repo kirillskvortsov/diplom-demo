@@ -18,26 +18,26 @@ function RushModal(props) {
         <Modal.Body>
           <Form className="rush-form">
             <Form.Group className="rush-form-group">
-              <Form.Control className="rush-form-input" type="text" value="198273" />
+              <Form.Control className="rush-form-input" type="text" />
               <Form.Label className="rush-form-label">Номер заказа *</Form.Label>
             </Form.Group>
             <Form.Group className="rush-form-group">
-              <Form.Control className="rush-form-input" type="text" value="Иванов Иван Иванович" />
+              <Form.Control className="rush-form-input" type="text" />
               <Form.Label className="rush-form-label">ФИО *</Form.Label>
             </Form.Group>
             <Form.Group className="rush-form-group">
-              <Form.Control className="rush-form-input" type="tel"  value="89642642565"/>
+              <Form.Control className="rush-form-input" type="tel"  />
               <Form.Label className="rush-form-label">Телефон *</Form.Label>
             </Form.Group>
             <Form.Group className="rush-form-group">
-              <Form.Control className="rush-form-input" type="email" value="ivanov@mail.ru" />
+              <Form.Control className="rush-form-input" type="email" />
               <Form.Label className="rush-form-label">e-mail</Form.Label>
             </Form.Group>
             <Form.Group className="rush-form-group">
-              <Form.Control className="rush-form-input" type="date" value="2020-03-20" />
+              <Form.Control className="rush-form-input" type="date" />
               <Form.Label className="rush-form-label">Дата заказа *</Form.Label>
             </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect1" className="rush-form-group">
+            <Form.Group controlId="exampleForm.ControlSelectSupplier" className="rush-form-group">
               <Form.Control as="select" className="rush-form-input">
                 <option>Склад</option>
                 <option>Поставщик</option>
@@ -45,10 +45,10 @@ function RushModal(props) {
               <Form.Label className="rush-form-label">Поставщик *</Form.Label>
             </Form.Group>
             <Form.Group className="rush-form-group">
-              <Form.Control className="rush-form-input" type="date" value="2020-03-20" />
+              <Form.Control className="rush-form-input" type="date" />
               <Form.Label className="rush-form-label">Дата доставки *</Form.Label>
             </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect1" className="rush-form-group">
+            <Form.Group controlId="exampleForm.ControlSelectStatus" className="rush-form-group">
               <Form.Control as="select" className="rush-form-input">
                 <option>Доставлено</option>
                 <option>Ождиает проверки</option>
@@ -61,9 +61,15 @@ function RushModal(props) {
           <h3 className="rush-form-table-header">Список запчастей</h3>
           <RushFormTable />
         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide} className="rush-form-btn">Перейти в заказ поставщику</Button>
-          <Button onClick={props.onHide} className="rush-form-btn">Сохранить</Button>
+        <Modal.Footer className="rush-form-footer">
+          <div className="rush-form-footer-left">
+            <h3 className="rushTotal">Итоговая сумма</h3>
+            <h3 className="rushTotalNumber">0 руб.</h3>
+          </div>
+          <div className="rush-form-footer-right">
+            <Button onClick={props.onHide} className="rush-form-btn rush-form-btn-supplier">Перейти в заказ поставщику</Button>
+            <Button onClick={props.onHide} className="rush-form-btn rush-form-btn-save">Сохранить</Button>
+          </div>
         </Modal.Footer>
       </Modal>
     );

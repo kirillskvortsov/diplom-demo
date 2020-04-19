@@ -21,7 +21,7 @@ function SearchTable(props) {
                         <td>0003758</td>
                         <td>5Q0129621B</td>
                         <td>23</td>
-                        <td>0<a href="#" onClick={props.onClick} className="reserve-btn">Зарезервировать</a></td>
+                        <td>0<span onClick={props.onClick} className="reserve-btn">Зарезервировать</span></td>
                         <td>0 дней</td>
                         <td>692 руб.</td>
                         <td>Воздухохавод SKODA OCTAVIA (A7) (2013>)</td>
@@ -30,7 +30,7 @@ function SearchTable(props) {
                         <td>0103728</td>
                         <td>5E0998226</td>
                         <td>0</td>
-                        <td>0<a href="#" onClick={props.onClick} className="reserve-btn">Зарезервировать</a></td>
+                        <td>0<span onClick={props.onClick} className="reserve-btn">Зарезервировать</span></td>
                         <td>3 дня</td>
                         <td>418 руб.</td>
                         <td>Кронштейн фар правый Octavia (A7) 2013></td>
