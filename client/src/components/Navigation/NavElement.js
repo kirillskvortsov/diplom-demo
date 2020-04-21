@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 function NavElement(props) {
     return(
         <li className="nav-li">
-            <a href={props.anchor} className="nav-a">
+            <Link to={props.anchor} className="nav-a">
                 <img className="nav-img" src={props.src} alt={props.alt}/>
                 <p>{props.text}</p>
-            </a>
+            </Link>
         </li>
     );
 }

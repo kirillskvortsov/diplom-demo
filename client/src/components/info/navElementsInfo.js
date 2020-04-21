@@ -4,7 +4,7 @@ const info = [
         alt: 'home',
         text: 'Домой',
         src:'assets/home.png',
-        anchor: "#",
+        anchor: "/",
         srcCard: "assets/wp.png"
     }, 
     {
@@ -12,7 +12,7 @@ const info = [
         alt: 'search',
         text: 'Поиск',
         src:'assets/search.png',
-        anchor: "#",
+        anchor: "/SearchPage",
         srcCard: "assets/wp.png"
     }, 
     {
@@ -20,7 +20,7 @@ const info = [
         alt: 'tasks',
         text: 'Задачи',
         src:'assets/list.png',
-        anchor: "#",
+        anchor: "/TasksPage",
         srcCard: "assets/wp.png"
     }, 
     {
@@ -28,7 +28,7 @@ const info = [
         alt: 'rush',
         text: 'Срочный заказ',
         src:'assets/timer.png',
-        anchor: "#",
+        anchor: "/RushPage",
         srcCard: "assets/wp.png"
     }, 
     {
@@ -36,7 +36,7 @@ const info = [
         alt: 'plan',
         text: 'Плановый заказ',
         src:'assets/plan.png',
-        anchor: "#",
+        anchor: "/PlanPage",
         srcCard: "assets/wp.png"
     }, 
     {
@@ -44,7 +44,7 @@ const info = [
         alt: 'supplier',
         text: 'Заказ поставщику',
         src:'assets/delivery.png',
-        anchor: "#",
+        anchor: "/SupplierPage",
         srcCard: "assets/wp.png"
     }, 
     {
@@ -52,7 +52,7 @@ const info = [
         alt: 'analytics',
         text: 'Аналитика',
         src:'assets/chart.png',
-        anchor: "#",
+        anchor: "/AnalyticsPage",
         srcCard: "assets/wp.png"
     }, 
 ];

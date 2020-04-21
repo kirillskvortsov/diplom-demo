@@ -1,13 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from './components/Navigation/Navbar'
 import Main from './components/MainElements/Main'
 
 function App() {
   return (
-    <React.Fragment>
+    <Router>
       <Navbar />
       <Main />
-    </React.Fragment>
+    </Router>
   );
 }
 
