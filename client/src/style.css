@@ -149,7 +149,6 @@ main {
 /* ------------------------------STYLES FOR TABLES ----------------------------------------------- */
 /* ----------------------------------------------------------------------------------------------- */
 
-
 .table-container {
     overflow-y: auto;
     margin-bottom: 0;
@@ -380,6 +379,11 @@ main {
     grid-gap: 0px 20px;
 }
 
+.modal-w80 {
+    width: 80%;
+    max-width: 80% !important;
+}
+
 .rush-form-group {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -419,7 +423,6 @@ main {
     justify-content: space-between !important;
 }
 
-
 .rush-form-footer-left {
     display: flex;
     flex-direction: row;
@@ -427,4 +430,18 @@ main {
 
 .rush-form-btn-supplier {
     margin-right: 20px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* ------------------------------STYLES FOR MAIN: SUPPLIER---------------------------------------- */
+/* ----------------------------------------------------------------------------------------------- */
+
+.supplier-table-container {
+    height: 460px;
+}
+
+.supplier-footer {
+    display: flex;
+    justify-content: flex-end;
 }

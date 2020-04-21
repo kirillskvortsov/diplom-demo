@@ -12,7 +12,7 @@ function TaskModal(props) {
       <Modal
         show={props.show}
         onHide={props.onHide}
-        size="lg"
+        dialogClassName="modal-w80"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >

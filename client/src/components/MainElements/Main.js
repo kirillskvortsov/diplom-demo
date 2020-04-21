@@ -7,6 +7,7 @@ import RushPage from './Pages/RushPage';
 import PlanPage from './Pages/PlanPage';
 import SupplierPage from './Pages/SupplierPage';
 import AnalyticsPage from './Pages/AnalyticsPage';
+import IncomingPage from './Pages/IncomingPage';
 
 function Main() {
     return(
@@ -32,8 +33,12 @@ function Main() {
           <Route path="/AnalyticsPage">
             <AnalyticsPage />
           </Route>
+          <Route path="/IncomingPage">
+            <IncomingPage />
+          </Route>
         </Switch>
     );
+    //return(<IncomingPage />);
 }
 
 export default Main;

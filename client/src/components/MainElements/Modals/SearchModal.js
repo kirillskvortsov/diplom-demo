@@ -14,7 +14,7 @@ function SearchModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <p>
+          <p className="search-modal-p">
             Зарезервировать эту позицию для существующего заказа или создать новый?
           </p>
         </Modal.Body>
