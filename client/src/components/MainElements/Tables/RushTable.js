@@ -10,11 +10,11 @@ function RushTable(props) {
                 <thead>
                     <tr>
                         <th className="width-100 vertical-align">Номер заказа</th>
-                        <th className="width-100 vertical-align">Дата заказа</th>
+                        <th className="width-150 vertical-align">Дата заказа</th>
                         <th className="width-300 vertical-align">ФИО</th>
                         <th className="width-150 vertical-align">Сумма</th>
                         <th className="width-300 vertical-align">Поставщики</th>
-                        <th className="width-100 vertical-align">Дата доставки</th>
+                        <th className="width-150 vertical-align">Дата доставки</th>
                         <th>Статус</th>
                     </tr>
                 </thead>

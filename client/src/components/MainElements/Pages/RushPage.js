@@ -13,10 +13,10 @@ class RushPage extends React.Component {
                     id: 1,
                     number: "0002513",
                     name: "Иванов И.И.",
-                    phome: "89876543211",
+                    phone: "89876543211",
                     email: "ivanov@mail.ru",
-                    date1: "14.02.2020",
-                    date2: "17.02.2020",
+                    date1: "2020-02-14",
+                    date2: "2020-02-17",
                     supplier: "ЕвроАвто",
                     status: "Доставлено",
                     parts: [
@@ -37,10 +37,10 @@ class RushPage extends React.Component {
                     id: 2,
                     number: "0002514",
                     name: "Петров И.И.",
-                    phome: "89812343211",
+                    phone: "89812343211",
                     email: "petrov@mail.ru",
-                    date1: "15.02.2020",
-                    date2: "18.02.2020",
+                    date1: "2020-02-15",
+                    date2: "2020-02-18",
                     supplier: "ТТС",
                     status: "Ожидает отправки",
                     parts: [
@@ -61,10 +61,10 @@ class RushPage extends React.Component {
                     id: 3,
                     number: "0002515",
                     name: "Сидоров И.И.",
-                    phome: "89817893211",
+                    phone: "89817893211",
                     email: "sidorov@mail.ru",
-                    date1: "15.02.2020",
-                    date2: "18.02.2020",
+                    date1: "2020-02-15",
+                    date2: "2020-02-18",
                     supplier: "ТТС",
                     status: "Доставлено",
                     parts: [
@@ -83,6 +83,7 @@ class RushPage extends React.Component {
                 },
             ],
             value: '',
+            modalData: ""
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -91,12 +92,14 @@ class RushPage extends React.Component {
         this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);
         this.handleEditButtonClick = this.handleEditButtonClick.bind(this);
         this.handleNewButtonClick = this.handleNewButtonClick.bind(this);
+        this.handleCloseModalClick = this.handleCloseModalClick.bind(this);
     }
 
     
     handleChange(event) {
+        const {name, value} = event.target;
         this.setState({
-            value: event.target.value
+            [name]: value
         });
     }
 
@@ -115,7 +118,7 @@ class RushPage extends React.Component {
         let copy = this.state.rushTable.slice();
         for(let i = 0; i < copy.length; i++)
             copy[i].selected = false;
-        copy[id-1].selected = true;
+        copy.find(i => i.id === id).selected = true;
         this.setState({
             rushTable: copy
         });
@@ -131,12 +134,20 @@ class RushPage extends React.Component {
     handleEditButtonClick(bool) {
         if(this.state.rushTable.filter(i => i.selected).length > 0) {
             this.setState({
+                modalData: this.state.rushTable.filter(i => i.selected),
                 modalShow: bool
             });
         }
     }
 
     handleNewButtonClick(bool) {
+        this.setState({
+            modalData: "",
+            modalShow: bool
+        });
+    }
+
+    handleCloseModalClick(bool) {
         this.setState({
             modalShow: bool
         });
@@ -154,6 +165,7 @@ class RushPage extends React.Component {
                     <input 
                         className="form-control rush-input" 
                         type="search" 
+                        name="value"
                         placeholder="Номер заказа, дата или ФИО заказчика" 
                         value={this.state.value} 
                         onChange={this.handleChange}
@@ -164,8 +176,10 @@ class RushPage extends React.Component {
                     handleRowClick={this.handleRowClick}
                 />
                 <RushModal 
+                    data={this.state.modalData}
                     show={this.state.modalShow}
-                    onHide={() => this.handleNewButtonClick(false)}
+                    onHide={() => this.handleCloseModalClick(false)}
+                    handleChange={this.handleChange}
                 />
             </main>
         );
