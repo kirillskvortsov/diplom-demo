@@ -5,7 +5,7 @@ const info = [
         text: 'Домой',
         src:'assets/home.png',
         anchor: "/",
-        srcCard: "assets/wp.png"
+        srcCard: ""
     }, 
     {
         id: 2,
@@ -13,7 +13,7 @@ const info = [
         text: 'Поиск',
         src:'assets/search.png',
         anchor: "/SearchPage",
-        srcCard: "assets/wp.png"
+        srcCard: "assets/background/search.png"
     }, 
     {
         id: 3,
@@ -21,7 +21,7 @@ const info = [
         text: 'Задачи',
         src:'assets/list.png',
         anchor: "/TasksPage",
-        srcCard: "assets/wp.png"
+        srcCard: "assets/background/tasks.png"
     }, 
     {
         id: 4,
@@ -29,7 +29,7 @@ const info = [
         text: 'Срочный заказ',
         src:'assets/timer.png',
         anchor: "/RushPage",
-        srcCard: "assets/wp.png"
+        srcCard: "assets/background/rush.png"
     }, 
     {
         id: 5,
@@ -37,7 +37,7 @@ const info = [
         text: 'Плановый заказ',
         src:'assets/plan.png',
         anchor: "/PlanPage",
-        srcCard: "assets/wp.png"
+        srcCard: "assets/background/plan.png"
     }, 
     {
         id: 6,
@@ -45,7 +45,7 @@ const info = [
         text: 'Заказ поставщику',
         src:'assets/delivery.png',
         anchor: "/SupplierPage",
-        srcCard: "assets/wp.png"
+        srcCard: "assets/background/supplier.png"
     }, 
     {
         id: 7,
@@ -53,7 +53,7 @@ const info = [
         text: 'Аналитика',
         src:'assets/chart.png',
         anchor: "/AnalyticsPage",
-        srcCard: "assets/wp.png"
+        srcCard: "assets/background/analytics.png"
     }, 
 ];
 

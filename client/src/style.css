@@ -130,8 +130,11 @@ main {
 }
 
 .home-img {
-    width: 100%;
+    height: 200px;
+    width: 400px;
+    border: 1px solid #535353;
     border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
 }
 
 .home-p {
@@ -191,6 +194,10 @@ main {
 }
 
 .carpark-table-container {
+    height: 450px;
+}
+
+.season-table-container {
     height: 450px;
 }
 
@@ -519,6 +526,7 @@ main {
 
 .order-info {
     display: flex;
+    flex-direction: column;
 }
 
 .order-days {
