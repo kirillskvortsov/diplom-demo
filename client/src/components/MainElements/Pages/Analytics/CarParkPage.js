@@ -14,15 +14,6 @@ function CarParkPage() {
                         <Button className="search-btn margin-top-10">Поиск</Button>
                     </div>
                 </div>
-                <div className="grid-container filters-container">
-                    <h2 className="sub-header height-48">Фильтры</h2>
-                    <div className="filter-inputs">
-                        <input className="form-control margin-top-10 input-mark" type="search" placeholder="Марка" />
-                        <input className="form-control margin-top-10 input-model" type="search" placeholder="Модель" />
-                        <input className="form-control margin-top-10 input-type" type="search" placeholder="Год выпуска" />
-                        <Button className="apply-btn margin-top-10">Применить</Button>
-                    </div>
-                </div>
             </div>
             <CarParkTable />
             <div className="analytics-footer">

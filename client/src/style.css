@@ -201,6 +201,26 @@ main {
     height: 450px;
 }
 
+.width-100 {
+    width: 100px;
+}
+
+.width-150 {
+    width: 150px;
+}
+
+.width-300 {
+    width: 300px;
+}
+
+.vertical-align {
+    vertical-align: middle !important;
+}
+
+.table-row-selected {
+    outline: 2px solid black
+}
+
 /* ----------------------------------------------------------------------------------------------- */
 /* ------------------------------STYLES FOR MAIN: SEARCH------------------------------------------ */
 /* ----------------------------------------------------------------------------------------------- */
@@ -218,52 +238,19 @@ main {
     gap: 50px;
 }
 
-.search-container, .filters-container {
+.search-container {
     display: grid;
     grid-template-rows: 1fr 3fr;
     height: 130px;
 }
 
-.search-inputs {
-    display: grid;
-    grid-template-columns: 5fr 1fr;
-    gap: 20px;
-    align-content: top;
-    justify-content: center;
-    height: 40px;
-}
-
-.search-btn, .apply-btn{
-    height: 38px;
-}
-
-.filter-inputs {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    align-content: top;
-    justify-content: center;
-    height: 40px;
-}
-
-.apply-btn {
-    margin-left: 20px;
+.search-input {
+    margin-top: 10px;
 }
 
 .height-48 {
     height: 48px;
 }
-
-.reserve-btn {
-    font-size: 12px;
-    margin-left: 20px;
-    color: #0069d9;
-}
-
-.reserve-btn:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
 
 
 /* ----------------------------------------------------------------------------------------------- */
@@ -358,7 +345,7 @@ main {
 .rush-page-searchbar {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 2fr 1fr;
-    grid-template-areas: 'rn re rd . ri rse';
+    grid-template-areas: 'rn re rd . ri ri';
     gap: 20px;
 }
 
@@ -381,12 +368,6 @@ main {
 .rush-btn-delete {
     grid-area: rd;
 }
-
-.rush-btn-search {
-    grid-area: rse;
-}
-
-
 
 .rush-form {
     display: grid;

@@ -5,7 +5,7 @@ import SpareCatalogTable from '../../Tables/SpareCatalogTable';
 import SpareCatalogModal from '../../Modals/SpareCatalogModal';
 
 function SpareCatalogPage() {
-    const [modalShow, setModalShow] = useState(true);
+    const [modalShow, setModalShow] = useState(false);
 
     return(
         <main className="main main-rush">

@@ -7,33 +7,47 @@ function SearchTable(props) {
             <Table striped bordered hover className="table">
                 <thead>
                     <tr>
-                        <th>Артикул</th>
-                        <th>VIN-номер</th>
-                        <th>Количество на складе</th>
-                        <th>Количество в резерве</th>
-                        <th>Срок доставки</th>
-                        <th>Стоимость</th>
-                        <th>Описание</th>
+                        <th className="width-100 vertical-align">Артикул</th>
+                        <th className="width-150 vertical-align">VIN-номер</th>
+                        <th className="width-100 vertical-align">Количество на складе</th>
+                        <th className="width-100 vertical-align">Количество в резерве</th>
+                        <th className="width-100 vertical-align">Срок доставки</th>
+                        <th className="width-150 vertical-align">Стоимость</th>
+                        <th className="vertical-align">Описание</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {props.data.map((row, index) => {
+                        const {id, art, vin, stock, reserve, time, cost, desc} = row;
+                        return(
+                            <tr key={id}>
+                                <td>{art}</td>
+                                <td>{vin}</td>
+                                <td>{stock}</td>
+                                <td>{reserve}</td>
+                                <td>{time} дней</td>
+                                <td>{cost}</td>
+                                <td>{desc}</td>
+                            </tr>
+                        );
+                    })}
                     <tr>
-                        <td>0003758</td>
-                        <td>5Q0129621B</td>
-                        <td>23</td>
-                        <td>0<span onClick={props.onClick} className="reserve-btn">Зарезервировать</span></td>
-                        <td>0 дней</td>
-                        <td>692 руб.</td>
-                        <td>Воздухохавод SKODA OCTAVIA (A7) (2013>)</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>0103728</td>
-                        <td>5E0998226</td>
-                        <td>0</td>
-                        <td>0<span onClick={props.onClick} className="reserve-btn">Зарезервировать</span></td>
-                        <td>3 дня</td>
-                        <td>418 руб.</td>
-                        <td>Кронштейн фар правый Octavia (A7) 2013></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
