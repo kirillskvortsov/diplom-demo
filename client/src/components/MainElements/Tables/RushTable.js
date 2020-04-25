@@ -2,8 +2,6 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 
 function RushTable(props) {
-    
-
     return(
         <div className="table-container rush-table-container">
             <Table id="rushTable" striped bordered hover className="table">

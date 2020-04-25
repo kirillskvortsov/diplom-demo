@@ -6,7 +6,15 @@ import RushModal from '../Modals/RushModal';
 class RushPage extends React.Component {
     constructor(props) {
         super(props);
+
+        const currentDate = new Date();
+        const day = currentDate.getDate() > 9 ? currentDate.getDate() : "0" + currentDate.getDate();
+        const month = currentDate.getMonth() + 1  > 9 ? currentDate.getMonth() + 1 : "0" + (currentDate.getMonth() + 1);
+        const year = currentDate.getFullYear();
+        const date = year + "-" + month + "-" + day;
+
         this.state = {
+            date: date,
             modalShow: false,
             rushTable: [
                 {
@@ -27,7 +35,8 @@ class RushPage extends React.Component {
                             col: 1,
                             supp: "ЕвроАвто",
                             price: 2498,
-                            sum: 2498
+                            sum: 2498,
+                            selected: false
                         }
                     ],
                     totalSum: 2498,
@@ -51,7 +60,8 @@ class RushPage extends React.Component {
                             col: 1,
                             supp: "ТТС",
                             price: 1073,
-                            sum: 1073
+                            sum: 1073,
+                            selected: false
                         }
                     ],
                     totalSum: 1073,
@@ -75,7 +85,8 @@ class RushPage extends React.Component {
                             col: 1,
                             supp: "ТТС",
                             price: 1073,
-                            sum: 1073
+                            sum: 1073,
+                            selected: false
                         }
                     ],
                     totalSum: 1073,
@@ -83,23 +94,73 @@ class RushPage extends React.Component {
                 },
             ],
             value: '',
-            modalData: ""
+            modalData: {
+                id: 0,
+                number: "",
+                name: "",
+                phone: "",
+                email: "",
+                date1: date,
+                date2: date,
+                supplier: "",
+                status: "Ожидает отправки",
+                parts: 
+                [
+                    {   
+                        id: 1,
+                        art: "",
+                        desc: "",
+                        col: 0,
+                        supp: "",
+                        price: 0,
+                        sum: 0 ,
+                        selected: false
+                    }
+                ],
+                totalSum: 0,
+                selected: false,
+            },
+            id: 10000001,
+            partsId: 10000001
         }
 
+        this.handleSaveButtonClick = this.handleSaveButtonClick.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleTableChange = this.handleTableChange.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleRowClick = this.handleRowClick.bind(this);
         this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);
         this.handleEditButtonClick = this.handleEditButtonClick.bind(this);
         this.handleNewButtonClick = this.handleNewButtonClick.bind(this);
         this.handleCloseModalClick = this.handleCloseModalClick.bind(this);
+        this.handleAddClick = this.handleAddClick.bind(this);
+        this.handleFormDeleteButtonClick = this.handleFormDeleteButtonClick.bind(this);
+        this.handleFormRowClick = this.handleFormRowClick.bind(this);
     }
 
-    
-    handleChange(event) {
-        const {name, value} = event.target;
+    handleSearch(e) {
+        const {name, value} = e.target
         this.setState({
             [name]: value
+        })
+    }
+    
+    handleChange(e) {
+        const modalData = this.state.modalData;
+        const { name, value } = e.target;
+        modalData[0][name] = value;
+        this.setState({ 
+            modalData: modalData 
+        });
+    }
+
+    handleTableChange(e) {
+        const modalData = this.state.modalData;
+        const { name, value } = e.target;
+        modalData[0].parts[0][name] = value;
+        this.setState({ 
+            modalData: modalData 
         });
     }
 
@@ -112,6 +173,24 @@ class RushPage extends React.Component {
             item.name.toLocaleLowerCase().includes(inp)
         )
         return copy;
+    }
+
+    handleFormRowClick(id) {
+        let copy = this.state.modalData;
+        for(let i = 0; i < copy.length; i++)
+            copy[0].parts[i].selected = false;
+        copy[0].parts.find(i => i.id === id).selected = true;
+        this.setState({
+            modalData: copy
+        });
+    }
+
+    handleFormDeleteButtonClick() {
+        let items = this.state.modalData;
+        items[0].parts = items[0].parts.filter(i => !i.selected);
+        this.setState({
+            modalData: items
+        });
     }
 
     handleRowClick(id) {
@@ -132,25 +211,83 @@ class RushPage extends React.Component {
     }
 
     handleEditButtonClick(bool) {
-        if(this.state.rushTable.filter(i => i.selected).length > 0) {
+        const item = this.state.rushTable.filter(i => i.selected);
+        if(item.length > 0) {
             this.setState({
-                modalData: this.state.rushTable.filter(i => i.selected),
+                modalData: item,
                 modalShow: bool
             });
         }
     }
 
-    handleNewButtonClick(bool) {
+    handleSaveButtonClick(bool) {
+        const modal = this.state.modalData[0];
+        const rush = this.state.rushTable;
         this.setState({
-            modalData: "",
-            modalShow: bool
+            rushTable: this.state.rushTable.concat(modal),
+            id: this.state.id + 1,
+            modalShow: bool,
+        });
+    }
+
+    handleNewButtonClick(bool) {
+        let copy = this.state.rushTable.slice();
+        for(let i = 0; i < copy.length; i++)
+            copy[i].selected = false;
+        this.setState({
+            modalData: [{
+                id: this.state.id,
+                number: "",
+                name: "",
+                phone: "",
+                email: "",
+                date1: this.state.date,
+                date2: this.state.date,
+                supplier: "",
+                status: "Ожидает отправки",
+                parts: 
+                [
+                    {   
+                        id: 1,
+                        art: "",
+                        desc: "",
+                        col: 0,
+                        supp: "",
+                        price: 0,
+                        sum: 0,
+                        selected: false
+                    }
+                ],
+                totalSum: 0,
+                selected: false
+            }],
+            modalShow: bool,
         });
     }
 
     handleCloseModalClick(bool) {
         this.setState({
-            modalShow: bool
+            modalShow: bool,
         });
+    }
+
+    handleAddClick() {
+        let modal = this.state.modalData;
+        let col = [{   
+            id: this.state.partsId,
+            art: "",
+            desc: "",
+            col: 0,
+            supp: "",
+            price: 0,
+            sum: 0,
+            selected: false 
+        }];
+        modal[0].parts = modal[0].parts.concat(col);
+        this.setState({
+            modalData: modal,
+            partsId: this.state.partsId + 1
+        })
     }
 
     render() {
@@ -168,7 +305,7 @@ class RushPage extends React.Component {
                         name="value"
                         placeholder="Номер заказа, дата или ФИО заказчика" 
                         value={this.state.value} 
-                        onChange={this.handleChange}
+                        onChange={this.handleSearch}
                     />
                 </div>
                 <RushTable 
@@ -178,8 +315,14 @@ class RushPage extends React.Component {
                 <RushModal 
                     data={this.state.modalData}
                     show={this.state.modalShow}
+                    date={this.state.date}
                     onHide={() => this.handleCloseModalClick(false)}
                     handleChange={this.handleChange}
+                    handleTableChange={this.handleTableChange}
+                    handleSaveButtonClick={() => this.handleSaveButtonClick(false)}
+                    handleAddClick={this.handleAddClick}
+                    handleFormRowClick={this.handleFormRowClick}
+                    handleFormDeleteButtonClick={this.handleFormDeleteButtonClick}
                 />
             </main>
         );

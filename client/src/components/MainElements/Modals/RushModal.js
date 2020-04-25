@@ -3,7 +3,35 @@ import { Modal, Button, Form } from 'react-bootstrap';
 import RushFormTable from '../Tables/RushFormTable';
 
 function RushModal(props) {
-  const data = props.show && props.data !== "" && props.data[0];
+  const data = props.data[0] || 
+  [{
+    id: 0,
+    number: "",
+    name: "",
+    phone: "",
+    email: "",
+    date1: props.date,
+    date2: props.date,
+    supplier: "",
+    status: "Ожидает отправки",
+    parts: 
+    [
+        {   
+            id: 1,
+            rows: 1,
+            art: "",
+            desc: "",
+            col: 0,
+            supp: "",
+            price: 0,
+            sum: 0,
+            selected: false
+        }
+    ],
+    totalSum: 0,
+    selected: false
+  }];
+
   return (
     <Modal
       show={props.show}
@@ -23,9 +51,10 @@ function RushModal(props) {
             <Form.Control 
               className="rush-form-input" 
               onChange={props.handleChange} 
-              name="" 
+              name="number" 
               type="text" 
               value={data.number}
+              required
             />
             <Form.Label className="rush-form-label">Номер заказа *</Form.Label>
           </Form.Group>
@@ -33,9 +62,10 @@ function RushModal(props) {
             <Form.Control 
               className="rush-form-input" 
               onChange={props.handleChange} 
-              name="modalData" 
+              name="name" 
               type="text" 
               value={data.name} 
+              required
             />
             <Form.Label className="rush-form-label">ФИО *</Form.Label>
           </Form.Group>
@@ -43,8 +73,10 @@ function RushModal(props) {
             <Form.Control 
               className="rush-form-input" 
               onChange={props.handleChange} 
+              name="phone"
               type="tel" 
               value={data.phone} 
+              required
             />
             <Form.Label className="rush-form-label">Телефон *</Form.Label>
           </Form.Group>
@@ -52,6 +84,7 @@ function RushModal(props) {
             <Form.Control 
               className="rush-form-input" 
               onChange={props.handleChange} 
+              name="email"
               type="email" 
               value={data.email} 
             />
@@ -61,17 +94,24 @@ function RushModal(props) {
             <Form.Control 
               className="rush-form-input" 
               onChange={props.handleChange} 
+              name="date1"
               type="date" 
               value={data.date1} 
+              required
             />
             <Form.Label className="rush-form-label">Дата заказа *</Form.Label>
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlSelectSupplier" className="rush-form-group">
             <Form.Control 
-            as="select" className="rush-form-input" 
-            value={data.supplier}>
-              <option>Склад</option>
-              <option>Поставщик</option>
+              as="select" 
+              className="rush-form-input" 
+              onChange={props.handleChange} 
+              name="supplier"
+              value={data.supplier}
+              required
+            >
+              <option value="ТТС">ТТС</option>
+              <option value="ЕвроАвто">ЕвроАвто</option>
             </Form.Control>
             <Form.Label className="rush-form-label">Поставщик *</Form.Label>
           </Form.Group>
@@ -79,8 +119,10 @@ function RushModal(props) {
             <Form.Control 
               className="rush-form-input" 
               onChange={props.handleChange} 
+              name="date2"
               type="date" 
               value={data.date2} 
+              required
             />
             <Form.Label className="rush-form-label">Дата доставки *</Form.Label>
           </Form.Group>
@@ -88,18 +130,26 @@ function RushModal(props) {
             <Form.Control 
               as="select" 
               className="rush-form-input" 
+              onChange={props.handleChange} 
+              name="status"
               value={data.status} 
+              required
             >
-              <option>Доставлено</option>
-              <option>Ождиает проверки</option>
-              <option>Ождиает доставки</option>
-              <option>Ождиает отправки</option>
+              <option value="Доставлено">Доставлено</option>
+              <option value="Ожидает проверки">Ожидает проверки</option>
+              <option value="Ожидает доставки">Ожидает доставки</option>
+              <option value="Ожидает отправки">Ожидает отправки</option>
             </Form.Control>
             <Form.Label className="rush-form-label">Статус *</Form.Label>
           </Form.Group>
         </Form>
         <h3 className="rush-form-table-header">Список запчастей</h3>
-        <RushFormTable data={data.parts} />
+        <RushFormTable 
+          data={data.parts}
+          handleTableChange={props.handleTableChange}   
+          handleFormDeleteButtonClick={props.handleFormDeleteButtonClick}
+          handleFormRowClick={props.handleFormRowClick}      
+        />
       </Modal.Body>
       <Modal.Footer className="rush-form-footer">
         <div className="rush-form-footer-left">
@@ -107,8 +157,9 @@ function RushModal(props) {
           <h3 className="rushTotalNumber">{data.totalSum ? data.totalSum : 0} руб.</h3>
         </div>
         <div className="rush-form-footer-right">
-          <Button onClick={props.onHide} className="rush-form-btn rush-form-btn-supplier">Перейти в заказ поставщику</Button>
-          <Button onClick={props.onHide} className="rush-form-btn rush-form-btn-save">Сохранить</Button>
+          <Button onClick={props.handleAddClick} className="rush-form-btn rush-form-btn-new">Добавить строку</Button>
+          <Button onClick={props.handleFormDeleteButtonClick} className="rush-form-btn rush-form-btn-new">Удалить строку</Button>
+          <Button onClick={props.handleSaveButtonClick} className="rush-form-btn rush-form-btn-save">Сохранить</Button>
         </div>
       </Modal.Footer>
     </Modal>

@@ -17,15 +17,63 @@ function RushFormTable(props) {
                 </thead>
                 <tbody>
                     {props.data !== undefined ? props.data.map((row, index) => {
-                        const {id, art, col, desc, price, sum, supp} = row;
+                        const {id, art, col, desc, price, sum, supp, selected} = row;
                         return(
-                            <tr key={id}>
-                                <td>{art}</td>
-                                <td>{desc}</td>
-                                <td>{col}</td>
-                                <td>{supp}</td>
-                                <td>{price} руб.</td>
-                                <td>{sum} руб.</td>
+                            <tr key={id} className={selected ? "table-row-selected" : "table-row-non-selected"} onClick={props.handleFormRowClick.bind(this, id)}>
+                                <td>
+                                    <input 
+                                        type="text" 
+                                        className="table-input" 
+                                        onChange={props.handleTableChange} 
+                                        value={art}
+                                        name="art"
+                                    />
+                                </td>
+                                <td>
+                                    <input 
+                                        type="text" 
+                                        className="table-input" 
+                                        onChange={props.handleTableChange} 
+                                        value={desc}
+                                        name="desc"
+                                    />
+                                </td>
+                                <td>
+                                    <input 
+                                        type="text" 
+                                        className="table-input" 
+                                        onChange={props.handleTableChange} 
+                                        value={col}
+                                        name="col"
+                                    />
+                                </td>
+                                <td>
+                                    <input 
+                                        type="text" 
+                                        className="table-input" 
+                                        onChange={props.handleTableChange} 
+                                        value={supp}
+                                        name="supp"
+                                    />
+                                </td>
+                                <td>
+                                    <input 
+                                        type="text" 
+                                        className="table-input" 
+                                        onChange={props.handleTableChange} 
+                                        value={price}
+                                        name="price"
+                                    />
+                                </td>
+                                <td>
+                                    <input 
+                                        type="text" 
+                                        className="table-input" 
+                                        onChange={props.handleTableChange} 
+                                        value={sum}
+                                        name="sum"
+                                    />
+                                </td>
                             </tr>
                         );
                     }):
@@ -38,14 +86,6 @@ function RushFormTable(props) {
                         <td><input type="text" className="table-input" /></td>
                     </tr>
                     }
-                    <tr>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                    </tr>
                 </tbody>
             </Table>
         </div>
