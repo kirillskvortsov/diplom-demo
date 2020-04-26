@@ -373,7 +373,7 @@ main {
     grid-area: rd;
 }
 
-.rush-form {
+.rush-form-div {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 0px 20px;

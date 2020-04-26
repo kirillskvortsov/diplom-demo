@@ -10,7 +10,7 @@ class RushPage extends React.Component {
 
         const currentDate = new Date();
         const day = currentDate.getDate() > 9 ? currentDate.getDate() : "0" + currentDate.getDate();
-        const month = currentDate.getMonth() + 1  > 9 ? currentDate.getMonth() + 1 : "0" + (currentDate.getMonth() + 1);
+        const month = currentDate.getMonth() + 1 > 9 ? currentDate.getMonth() + 1 : "0" + (currentDate.getMonth() + 1);
         const year = currentDate.getFullYear();
         const date = year + "-" + month + "-" + day;
 
@@ -26,10 +26,10 @@ class RushPage extends React.Component {
                     email: "ivanov@mail.ru",
                     date1: "2020-02-14",
                     date2: "2020-02-17",
-                    supplier: "ЕвроАвто",
+                    supplier: "Поставщик",
                     status: "Доставлено",
                     parts: [
-                        {   
+                        {
                             id: 1,
                             art: "0000001",
                             desc: "запчасть_1",
@@ -49,10 +49,10 @@ class RushPage extends React.Component {
                     email: "petrov@mail.ru",
                     date1: "2020-02-15",
                     date2: "2020-02-18",
-                    supplier: "ТТС",
+                    supplier: "Поставщик",
                     status: "Ожидает отправки",
                     parts: [
-                        {   
+                        {
                             id: 1,
                             art: "0000002",
                             desc: "запчасть_2",
@@ -72,15 +72,15 @@ class RushPage extends React.Component {
                     email: "sidorov@mail.ru",
                     date1: "2020-02-15",
                     date2: "2020-02-18",
-                    supplier: "ТТС",
+                    supplier: "Склад",
                     status: "Доставлено",
                     parts: [
-                        {   
+                        {
                             id: 1,
                             art: "0000002",
                             desc: "запчасть_2",
                             col: 1,
-                            supp: "ТТС",
+                            supp: "",
                             price: 1073,
                             selected: false
                         }
@@ -98,18 +98,18 @@ class RushPage extends React.Component {
                 date2: date,
                 supplier: "",
                 status: "Ожидает отправки",
-                parts: 
-                [
-                    {   
-                        id: 1,
-                        art: "",
-                        desc: "",
-                        col: 0,
-                        supp: "",
-                        price: 0,
-                        selected: false
-                    }
-                ],
+                parts:
+                    [
+                        {
+                            id: 1,
+                            art: "",
+                            desc: "",
+                            col: 0,
+                            supp: "",
+                            price: 0,
+                            selected: false
+                        }
+                    ],
                 selected: false,
             },
             value: '',
@@ -134,18 +134,18 @@ class RushPage extends React.Component {
     }
 
     handleSearch(e) {
-        const {name, value} = e.target
+        const { name, value } = e.target
         this.setState({
             [name]: value
         })
     }
-    
+
     handleChange(e) {
         const modal = cloneDeep(this.state.modalData);
         const { name, value } = e.target;
         modal[0][name] = value;
-        this.setState({ 
-            modalData: modal 
+        this.setState({
+            modalData: modal
         });
     }
 
@@ -153,17 +153,17 @@ class RushPage extends React.Component {
         const modalData = cloneDeep(this.state.modalData);
         const { name, value } = e.target;
         modalData[0].parts.find(i => i.selected === true)[name] = value;
-        this.setState({ 
-            modalData: modalData 
+        this.setState({
+            modalData: modalData
         });
     }
 
     handleInput() {
         let copy = cloneDeep(this.state.rushTable);
         let inp = cloneDeep(this.state.value.toString());
-        copy = copy.filter((item) => 
-            item.number.toLocaleLowerCase().includes(inp) || 
-            item.date1.toLocaleLowerCase().includes(inp) || 
+        copy = copy.filter((item) =>
+            item.number.toLocaleLowerCase().includes(inp) ||
+            item.date1.toLocaleLowerCase().includes(inp) ||
             item.name.toLocaleLowerCase().includes(inp)
         )
         return copy;
@@ -171,7 +171,7 @@ class RushPage extends React.Component {
 
     handleFormRowClick(id) {
         let copy = cloneDeep(this.state.modalData);
-        for(let i = 0; i < copy[0].parts.length; i++)
+        for (let i = 0; i < copy[0].parts.length; i++)
             copy[0].parts[i].selected = false;
         copy[0].parts.find(i => i.id === id).selected = true;
         this.setState({
@@ -189,7 +189,7 @@ class RushPage extends React.Component {
 
     handleRowClick(id) {
         let copy = cloneDeep(this.state.rushTable);
-        for(let i = 0; i < copy.length; i++)
+        for (let i = 0; i < copy.length; i++)
             copy[i].selected = false;
         copy.find(i => i.id === id).selected = true;
         this.setState({
@@ -206,7 +206,7 @@ class RushPage extends React.Component {
 
     handleEditButtonClick(bool) {
         const item = cloneDeep(this.state.rushTable.filter(i => i.selected));
-        if(item.length > 0) {
+        if (item.length > 0) {
             this.setState({
                 new: false,
                 modalData: item,
@@ -215,7 +215,8 @@ class RushPage extends React.Component {
         }
     }
 
-    handleSaveButtonClick(bool) {
+    handleSaveButtonClick(e, bool) {
+        e.preventDefault();
         const modal = cloneDeep(this.state.modalData[0]);
         if (this.state.new) {
             this.setState({
@@ -241,7 +242,7 @@ class RushPage extends React.Component {
 
     handleNewButtonClick(bool) {
         let copy = cloneDeep(this.state.rushTable);
-        for(let i = 0; i < copy.length; i++)
+        for (let i = 0; i < copy.length; i++)
             copy[i].selected = false;
         this.setState({
             modalData: [{
@@ -254,18 +255,18 @@ class RushPage extends React.Component {
                 date2: this.state.date,
                 supplier: "",
                 status: "Ожидает отправки",
-                parts: 
-                [
-                    {   
-                        id: 1,
-                        art: "",
-                        desc: "",
-                        col: 0,
-                        supp: "",
-                        price: 0,
-                        selected: false
-                    }
-                ],
+                parts:
+                    [
+                        {
+                            id: 1,
+                            art: "",
+                            desc: "",
+                            col: 0,
+                            supp: "",
+                            price: 0,
+                            selected: false
+                        }
+                    ],
                 selected: false
             }],
             modalShow: bool,
@@ -280,14 +281,14 @@ class RushPage extends React.Component {
 
     handleAddClick() {
         let modal = cloneDeep(this.state.modalData);
-        let row = [{   
+        let row = [{
             id: this.state.partsId,
             art: "",
             desc: "",
             col: 0,
             supp: "",
             price: 0,
-            selected: false 
+            selected: false
         }];
         modal[0].parts = modal[0].parts.concat(row);
         this.setState({
@@ -298,34 +299,34 @@ class RushPage extends React.Component {
 
     render() {
         const tableData = this.handleInput();
-        return(
+        return (
             <main className="main main-rush">
                 <h1 className="page-header">Срочные заказы</h1>
                 <div className="rush-page-searchbar">
                     <Button onClick={() => this.handleNewButtonClick(true)} className="rush-btn rush-btn-new">Новый заказ</Button>
                     <Button onClick={() => this.handleEditButtonClick(true)} className="rush-btn rush-btn-edit">Редактировать</Button>
                     <Button onClick={this.handleDeleteButtonClick} className="rush-btn rush-btn-delete">Удалить</Button>
-                    <input 
-                        className="form-control rush-input" 
-                        type="search" 
+                    <input
+                        className="form-control rush-input"
+                        type="search"
                         name="value"
-                        placeholder="Номер заказа, дата или ФИО заказчика" 
-                        value={this.state.value} 
+                        placeholder="Номер заказа, дата или ФИО заказчика"
+                        value={this.state.value}
                         onChange={this.handleSearch}
                     />
                 </div>
-                <RushTable 
+                <RushTable
                     data={tableData}
                     handleRowClick={this.handleRowClick}
                 />
-                <RushModal 
+                <RushModal
                     data={this.state.modalData}
                     show={this.state.modalShow}
                     date={this.state.date}
                     onHide={() => this.handleCloseModalClick(false)}
                     handleChange={this.handleChange}
                     handleTableChange={this.handleTableChange}
-                    handleSaveButtonClick={() => this.handleSaveButtonClick(false)}
+                    handleSaveButtonClick={(e) => this.handleSaveButtonClick(e, false)}
                     handleAddClick={this.handleAddClick}
                     handleFormRowClick={this.handleFormRowClick}
                     handleFormDeleteButtonClick={this.handleFormDeleteButtonClick}
