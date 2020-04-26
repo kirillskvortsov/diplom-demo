@@ -24,13 +24,16 @@ function RushModal(props) {
             col: 0,
             supp: "",
             price: 0,
-            sum: 0,
             selected: false
         }
     ],
-    totalSum: 0,
     selected: false
   }];
+
+  let total = 0;
+  data.parts && data.parts.map(item => {
+    total += item.col * item.price;
+  })
 
   return (
     <Modal
@@ -154,7 +157,7 @@ function RushModal(props) {
       <Modal.Footer className="rush-form-footer">
         <div className="rush-form-footer-left">
           <h3 className="rushTotal">Итоговая сумма</h3>
-          <h3 className="rushTotalNumber">{data.totalSum ? data.totalSum : 0} руб.</h3>
+          <h3 className="rushTotalNumber">{total} руб.</h3>
         </div>
         <div className="rush-form-footer-right">
           <Button onClick={props.handleAddClick} className="rush-form-btn rush-form-btn-new">Добавить строку</Button>

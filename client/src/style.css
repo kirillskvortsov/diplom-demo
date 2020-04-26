@@ -209,6 +209,10 @@ main {
     width: 150px;
 }
 
+.width-200 {
+    width: 200px;
+}
+
 .width-300 {
     width: 300px;
 }
@@ -388,6 +392,7 @@ main {
 
 .rush-form-input {
     border-color: rgba(0,0,0,0.3) !important;
+    color: black !important
 }
 
 .rush-form-label {

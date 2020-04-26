@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import cloneDeep from 'lodash/cloneDeep';
 import RushTable from '../Tables/RushTable.js';
 import RushModal from '../Modals/RushModal';
 
@@ -35,11 +36,9 @@ class RushPage extends React.Component {
                             col: 1,
                             supp: "ЕвроАвто",
                             price: 2498,
-                            sum: 2498,
                             selected: false
                         }
                     ],
-                    totalSum: 2498,
                     selected: false
                 },
                 {
@@ -60,11 +59,9 @@ class RushPage extends React.Component {
                             col: 1,
                             supp: "ТТС",
                             price: 1073,
-                            sum: 1073,
                             selected: false
                         }
                     ],
-                    totalSum: 1073,
                     selected: false
                 },
                 {
@@ -85,15 +82,12 @@ class RushPage extends React.Component {
                             col: 1,
                             supp: "ТТС",
                             price: 1073,
-                            sum: 1073,
                             selected: false
                         }
                     ],
-                    totalSum: 1073,
                     selected: false
                 },
             ],
-            value: '',
             modalData: {
                 id: 0,
                 number: "",
@@ -113,15 +107,15 @@ class RushPage extends React.Component {
                         col: 0,
                         supp: "",
                         price: 0,
-                        sum: 0 ,
                         selected: false
                     }
                 ],
-                totalSum: 0,
                 selected: false,
             },
+            value: '',
             id: 10000001,
-            partsId: 10000001
+            partsId: 10000001,
+            new: true
         }
 
         this.handleSaveButtonClick = this.handleSaveButtonClick.bind(this);
@@ -147,26 +141,26 @@ class RushPage extends React.Component {
     }
     
     handleChange(e) {
-        const modalData = this.state.modalData;
+        const modal = cloneDeep(this.state.modalData);
         const { name, value } = e.target;
-        modalData[0][name] = value;
+        modal[0][name] = value;
         this.setState({ 
-            modalData: modalData 
+            modalData: modal 
         });
     }
 
     handleTableChange(e) {
-        const modalData = this.state.modalData;
+        const modalData = cloneDeep(this.state.modalData);
         const { name, value } = e.target;
-        modalData[0].parts[0][name] = value;
+        modalData[0].parts.find(i => i.selected === true)[name] = value;
         this.setState({ 
             modalData: modalData 
         });
     }
 
     handleInput() {
-        let copy = this.state.rushTable.slice();
-        let inp = this.state.value.toString();
+        let copy = cloneDeep(this.state.rushTable);
+        let inp = cloneDeep(this.state.value.toString());
         copy = copy.filter((item) => 
             item.number.toLocaleLowerCase().includes(inp) || 
             item.date1.toLocaleLowerCase().includes(inp) || 
@@ -176,8 +170,8 @@ class RushPage extends React.Component {
     }
 
     handleFormRowClick(id) {
-        let copy = this.state.modalData;
-        for(let i = 0; i < copy.length; i++)
+        let copy = cloneDeep(this.state.modalData);
+        for(let i = 0; i < copy[0].parts.length; i++)
             copy[0].parts[i].selected = false;
         copy[0].parts.find(i => i.id === id).selected = true;
         this.setState({
@@ -186,7 +180,7 @@ class RushPage extends React.Component {
     }
 
     handleFormDeleteButtonClick() {
-        let items = this.state.modalData;
+        let items = cloneDeep(this.state.modalData);
         items[0].parts = items[0].parts.filter(i => !i.selected);
         this.setState({
             modalData: items
@@ -194,7 +188,7 @@ class RushPage extends React.Component {
     }
 
     handleRowClick(id) {
-        let copy = this.state.rushTable.slice();
+        let copy = cloneDeep(this.state.rushTable);
         for(let i = 0; i < copy.length; i++)
             copy[i].selected = false;
         copy.find(i => i.id === id).selected = true;
@@ -204,16 +198,17 @@ class RushPage extends React.Component {
     }
 
     handleDeleteButtonClick() {
-        let items = this.state.rushTable.filter(i => !i.selected);
+        let items = cloneDeep(this.state.rushTable.filter(i => !i.selected));
         this.setState({
             rushTable: items
         });
     }
 
     handleEditButtonClick(bool) {
-        const item = this.state.rushTable.filter(i => i.selected);
+        const item = cloneDeep(this.state.rushTable.filter(i => i.selected));
         if(item.length > 0) {
             this.setState({
+                new: false,
                 modalData: item,
                 modalShow: bool
             });
@@ -221,17 +216,31 @@ class RushPage extends React.Component {
     }
 
     handleSaveButtonClick(bool) {
-        const modal = this.state.modalData[0];
-        const rush = this.state.rushTable;
-        this.setState({
-            rushTable: this.state.rushTable.concat(modal),
-            id: this.state.id + 1,
-            modalShow: bool,
-        });
+        const modal = cloneDeep(this.state.modalData[0]);
+        if (this.state.new) {
+            this.setState({
+                rushTable: this.state.rushTable.concat(modal),
+                id: this.state.id + 1,
+                modalShow: bool,
+            });
+        } else {
+            let copy = cloneDeep(this.state.rushTable);
+            for (let i = 0; i < copy.length; i++) {
+                if (copy[i].id === modal.id) {
+                    copy[i] = modal;
+                    break;
+                }
+            }
+            this.setState({
+                rushTable: copy,
+                modalShow: bool,
+                new: true,
+            });
+        }
     }
 
     handleNewButtonClick(bool) {
-        let copy = this.state.rushTable.slice();
+        let copy = cloneDeep(this.state.rushTable);
         for(let i = 0; i < copy.length; i++)
             copy[i].selected = false;
         this.setState({
@@ -254,11 +263,9 @@ class RushPage extends React.Component {
                         col: 0,
                         supp: "",
                         price: 0,
-                        sum: 0,
                         selected: false
                     }
                 ],
-                totalSum: 0,
                 selected: false
             }],
             modalShow: bool,
@@ -272,18 +279,17 @@ class RushPage extends React.Component {
     }
 
     handleAddClick() {
-        let modal = this.state.modalData;
-        let col = [{   
+        let modal = cloneDeep(this.state.modalData);
+        let row = [{   
             id: this.state.partsId,
             art: "",
             desc: "",
             col: 0,
             supp: "",
             price: 0,
-            sum: 0,
             selected: false 
         }];
-        modal[0].parts = modal[0].parts.concat(col);
+        modal[0].parts = modal[0].parts.concat(row);
         this.setState({
             modalData: modal,
             partsId: this.state.partsId + 1

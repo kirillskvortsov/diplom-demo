@@ -7,30 +7,22 @@ function RushFormTable(props) {
             <Table bordered className="table">
                 <thead>
                     <tr>
-                        <th>Артикул</th>
                         <th>Описание</th>
+                        <th>Артикул</th>
                         <th>Количество</th>
                         <th>Поставщик</th>
-                        <th>Цена</th>
-                        <th>Сумма</th>
+                        <th>Цена, руб.</th>
+                        <th>Сумма, руб.</th>
                     </tr>
                 </thead>
                 <tbody>
                     {props.data !== undefined ? props.data.map((row, index) => {
-                        const {id, art, col, desc, price, sum, supp, selected} = row;
+                        const {id, art, col, desc, price, supp, selected} = row;
                         return(
                             <tr key={id} className={selected ? "table-row-selected" : "table-row-non-selected"} onClick={props.handleFormRowClick.bind(this, id)}>
                                 <td>
                                     <input 
-                                        type="text" 
-                                        className="table-input" 
-                                        onChange={props.handleTableChange} 
-                                        value={art}
-                                        name="art"
-                                    />
-                                </td>
-                                <td>
-                                    <input 
+                                        disabled = {selected ? false : true}
                                         type="text" 
                                         className="table-input" 
                                         onChange={props.handleTableChange} 
@@ -40,7 +32,18 @@ function RushFormTable(props) {
                                 </td>
                                 <td>
                                     <input 
+                                        disabled = {selected ? false : true}                                        
                                         type="text" 
+                                        className="table-input" 
+                                        onChange={props.handleTableChange} 
+                                        value={art}
+                                        name="art"
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        disabled = {selected ? false : true} 
+                                        type="number" 
                                         className="table-input" 
                                         onChange={props.handleTableChange} 
                                         value={col}
@@ -48,17 +51,21 @@ function RushFormTable(props) {
                                     />
                                 </td>
                                 <td>
-                                    <input 
-                                        type="text" 
+                                    <select 
+                                        disabled = {selected ? false : true}
                                         className="table-input" 
                                         onChange={props.handleTableChange} 
                                         value={supp}
                                         name="supp"
-                                    />
+                                    >
+                                        <option value="ЕвроАвто">ЕвроАвто</option>
+                                        <option value="ТТС">ТТС</option>
+                                    </select>
                                 </td>
                                 <td>
                                     <input 
-                                        type="text" 
+                                        disabled = {selected ? false : true}
+                                        type="number" 
                                         className="table-input" 
                                         onChange={props.handleTableChange} 
                                         value={price}
@@ -67,10 +74,11 @@ function RushFormTable(props) {
                                 </td>
                                 <td>
                                     <input 
-                                        type="text" 
+                                        disabled
+                                        type="number" 
                                         className="table-input" 
                                         onChange={props.handleTableChange} 
-                                        value={sum}
+                                        value={price * col}
                                         name="sum"
                                     />
                                 </td>
