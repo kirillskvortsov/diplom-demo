@@ -300,7 +300,7 @@ class IncomingPage extends React.Component {
                     <h2 className="sub-header height-48 next-plan">До следующего планового заказа: 35 дней</h2>
                 </div>
                 <div className="rush-page-searchbar">
-                    <Button onClick={() => this.handleNewButtonClick(true)} className="rush-btn rush-btn-new">Новый заказ</Button>
+                    <Button onClick={() => this.handleNewButtonClick(true)} className="rush-btn rush-btn-new">Новая накладная</Button>
                     <Button onClick={() => this.handleEditButtonClick(true)} className="rush-btn rush-btn-edit">Редактировать</Button>
                     <Button onClick={this.handleDeleteButtonClick} className="rush-btn rush-btn-delete">Удалить</Button>
                     <input
