@@ -9,7 +9,7 @@ function RushTable(props) {
                     <tr>
                         <th className="width-100 vertical-align">Номер заказа</th>
                         <th className="width-100 vertical-align">Дата заказа</th>
-                        <th className="width-300 vertical-align">ФИО</th>
+                        <th className="width-200 vertical-align">ФИО</th>
                         <th className="width-150 vertical-align">Сумма</th>
                         <th className="width-200 vertical-align">Поставщики</th>
                         <th className="width-100 vertical-align">Дата доставки</th>
@@ -22,12 +22,21 @@ function RushTable(props) {
                         let total = 0;
                         row.parts.map(item => total += item.col * item.price);
                         let suppliers = ""
+                        let supplierArray = [];
                         if (supplier === "Поставщик") {
-                            row.parts.map(item => suppliers += item.supp + ", ");
-                            suppliers = suppliers.substring(0, suppliers.length - 2);
+                            row.parts.map(item => supplierArray.push(item.supp));
+                            supplierArray = [...new Set(supplierArray)];
+                            suppliers = supplierArray.join(', ');
                         } else {
                             suppliers = "Склад";
                         }
+                        let color = "";
+                        if (status === "Доставлено, проверено")
+                            color = "green";
+                        else if (status === "Доставлено, ожидает проверки")
+                            color = "orange";
+                        else 
+                            color = "red"
                         return (
                             <tr className={selected ? "table-row-selected" : "table-row-non-selected"} key={id} onClick={props.handleRowClick.bind(this, id)}>
                                 <td>{number}</td>
@@ -36,7 +45,7 @@ function RushTable(props) {
                                 <td>{total} руб.</td>
                                 <td>{suppliers}</td>
                                 <td><input className="table-input" type="date" value={date2} disabled /></td>
-                                <td className={status === "Доставлено" ? "green" : "orange"}>{status}</td>
+                                <td className={color}>{status}</td>
                             </tr>
                         );
                     })}

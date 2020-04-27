@@ -139,10 +139,9 @@ function RushModal(props) {
                 value={data.status}
                 required
               >
-                <option value="Доставлено">Доставлено</option>
-                <option value="Ожидает проверки">Ожидает проверки</option>
-                <option value="Ожидает доставки">Ожидает доставки</option>
-                <option value="Ожидает отправки">Ожидает отправки</option>
+                <option value="Доставлено, проверено">Доставлено, проверено</option>
+                <option value="Доставлено, ожидает проверки">Доставлено, ожидает проверки</option>
+                <option value="Не доставлено">Не доставлено</option>
               </Form.Control>
               <Form.Label className="rush-form-label">Статус *</Form.Label>
             </Form.Group>

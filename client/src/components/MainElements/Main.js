@@ -70,7 +70,6 @@ function Main() {
           </Route>
         </Switch>
     );
-    // return(<CarParkPage />);
 }
 
 export default Main;

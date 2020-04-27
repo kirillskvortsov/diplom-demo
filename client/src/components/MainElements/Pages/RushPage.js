@@ -17,7 +17,7 @@ class RushPage extends React.Component {
         this.state = {
             date: date,
             modalShow: false,
-            rushTable: [
+            table: [
                 {
                     id: 1,
                     number: "0002513",
@@ -27,7 +27,7 @@ class RushPage extends React.Component {
                     date1: "2020-02-14",
                     date2: "2020-02-17",
                     supplier: "Поставщик",
-                    status: "Доставлено",
+                    status: "Доставлено, проверено",
                     parts: [
                         {
                             id: 1,
@@ -50,7 +50,7 @@ class RushPage extends React.Component {
                     date1: "2020-02-15",
                     date2: "2020-02-18",
                     supplier: "Поставщик",
-                    status: "Ожидает отправки",
+                    status: "Не доставлено",
                     parts: [
                         {
                             id: 1,
@@ -73,7 +73,7 @@ class RushPage extends React.Component {
                     date1: "2020-02-15",
                     date2: "2020-02-18",
                     supplier: "Склад",
-                    status: "Доставлено",
+                    status: "Доставлено, ожидает проверки",
                     parts: [
                         {
                             id: 1,
@@ -97,7 +97,7 @@ class RushPage extends React.Component {
                 date1: date,
                 date2: date,
                 supplier: "",
-                status: "Ожидает отправки",
+                status: "Не доставлено",
                 parts:
                     [
                         {
@@ -159,13 +159,15 @@ class RushPage extends React.Component {
     }
 
     handleInput() {
-        let copy = cloneDeep(this.state.rushTable);
+        let copy = cloneDeep(this.state.table);
         let inp = cloneDeep(this.state.value.toString());
-        copy = copy.filter((item) =>
-            item.number.toLocaleLowerCase().includes(inp) ||
-            item.date1.toLocaleLowerCase().includes(inp) ||
-            item.name.toLocaleLowerCase().includes(inp)
-        )
+        copy = copy.filter((item) => {
+            let date = item.date1.substring(8, 10) + '.' + item.date1.substring(5, 7) + '.' + item.date1.substring(0, 4);
+            return(
+                item.number.toLocaleLowerCase().includes(inp) ||
+                date.includes(inp) ||
+                item.name.toLocaleLowerCase().includes(inp.toLocaleLowerCase())
+        )})
         return copy;
     }
 
@@ -188,24 +190,24 @@ class RushPage extends React.Component {
     }
 
     handleRowClick(id) {
-        let copy = cloneDeep(this.state.rushTable);
+        let copy = cloneDeep(this.state.table);
         for (let i = 0; i < copy.length; i++)
             copy[i].selected = false;
         copy.find(i => i.id === id).selected = true;
         this.setState({
-            rushTable: copy
+            table: copy
         });
     }
 
     handleDeleteButtonClick() {
-        let items = cloneDeep(this.state.rushTable.filter(i => !i.selected));
+        let items = cloneDeep(this.state.table.filter(i => !i.selected));
         this.setState({
-            rushTable: items
+            table: items
         });
     }
 
     handleEditButtonClick(bool) {
-        const item = cloneDeep(this.state.rushTable.filter(i => i.selected));
+        const item = cloneDeep(this.state.table.filter(i => i.selected));
         if (item.length > 0) {
             this.setState({
                 new: false,
@@ -220,12 +222,12 @@ class RushPage extends React.Component {
         const modal = cloneDeep(this.state.modalData[0]);
         if (this.state.new) {
             this.setState({
-                rushTable: this.state.rushTable.concat(modal),
+                table: this.state.table.concat(modal),
                 id: this.state.id + 1,
                 modalShow: bool,
             });
         } else {
-            let copy = cloneDeep(this.state.rushTable);
+            let copy = cloneDeep(this.state.table);
             for (let i = 0; i < copy.length; i++) {
                 if (copy[i].id === modal.id) {
                     copy[i] = modal;
@@ -233,7 +235,7 @@ class RushPage extends React.Component {
                 }
             }
             this.setState({
-                rushTable: copy,
+                table: copy,
                 modalShow: bool,
                 new: true,
             });
@@ -241,7 +243,7 @@ class RushPage extends React.Component {
     }
 
     handleNewButtonClick(bool) {
-        let copy = cloneDeep(this.state.rushTable);
+        let copy = cloneDeep(this.state.table);
         for (let i = 0; i < copy.length; i++)
             copy[i].selected = false;
         this.setState({
@@ -254,7 +256,7 @@ class RushPage extends React.Component {
                 date1: this.state.date,
                 date2: this.state.date,
                 supplier: "",
-                status: "Ожидает отправки",
+                status: "Не доставлено",
                 parts:
                     [
                         {

@@ -7,7 +7,6 @@ function SupplierFormTable(props) {
             <Table bordered className="table">
                 <thead>
                     <tr>
-                        <th>№</th>
                         <th>Артикул</th>
                         <th>Описание</th>
                         <th>Количество</th>
@@ -16,22 +15,77 @@ function SupplierFormTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                        <td><input type="text" className="table-input" /></td>
-                    </tr>
+                    {props.data !== undefined ? props.data.map((row, index) => {
+                        const { id, art, col, desc, price, selected } = row;
+                        return (
+                            <tr key={id} className={selected ? "table-row-selected" : "table-row-non-selected"} onClick={props.handleFormRowClick.bind(this, id)}>
+                                <td>
+                                    <input
+                                        disabled={selected ? false : true}
+                                        type="text"
+                                        className="table-input"
+                                        onChange={props.handleTableChange}
+                                        value={desc}
+                                        name="desc"
+                                        required
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        disabled={selected ? false : true}
+                                        type="text"
+                                        className="table-input"
+                                        onChange={props.handleTableChange}
+                                        value={art}
+                                        name="art"
+                                        required
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        disabled={selected ? false : true}
+                                        type="number"
+                                        className="table-input"
+                                        onChange={props.handleTableChange}
+                                        value={col}
+                                        name="col"
+                                        required
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        disabled={selected ? false : true}
+                                        type="number"
+                                        className="table-input"
+                                        onChange={props.handleTableChange}
+                                        value={price}
+                                        name="price"
+                                        required
+                                    />
+                                </td>
+                                <td>
+                                    <input
+                                        disabled
+                                        type="number"
+                                        className="table-input"
+                                        onChange={props.handleTableChange}
+                                        value={price * col}
+                                        name="sum"
+                                        required
+                                    />
+                                </td>
+                            </tr>
+                        );
+                    }) :
+                        <tr>
+                            <td><input type="text" className="table-input" /></td>
+                            <td><input type="text" className="table-input" /></td>
+                            <td><input type="text" className="table-input" /></td>
+                            <td><input type="text" className="table-input" /></td>
+                            <td><input type="text" className="table-input" /></td>
+                            <td><input type="text" className="table-input" /></td>
+                        </tr>
+                    }
                 </tbody>
             </Table>
         </div>
