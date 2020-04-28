@@ -17,15 +17,15 @@ function DemandPrognosisPage() {
             </div>
             <Form className="demand-form">
                 <Form.Group className="demand-group">
-                    <Form.Control className="demand-input" type="month" defaultValue={date} />
+                    <Form.Control className="demand-input" type="month" defaultValue={date} disabled/>
                     <Form.Label className="demand-label">Период</Form.Label>
                 </Form.Group>
                 <Form.Group className="demand-group">
-                    <Form.Control className="demand-input" type="text" value="0.98" />
+                    <Form.Control className="demand-input" type="text" value="0.98" disabled />
                     <Form.Label className="demand-label">Сезонный коэффициент</Form.Label>
                 </Form.Group>
                 <Form.Group className="demand-group">
-                    <Form.Control className="demand-input" type="text" value="40 дней" />
+                    <Form.Control className="demand-input" type="text" value="40 дней" disabled />
                     <Form.Label className="demand-label">Точка заказа</Form.Label>
                 </Form.Group>
             </Form>

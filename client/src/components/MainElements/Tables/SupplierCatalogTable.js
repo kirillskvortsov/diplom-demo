@@ -7,24 +7,41 @@ function SupplierCatalogTable(props) {
             <Table striped bordered hover className="table">
                 <thead>
                     <tr className="table-header">
-                        <th>Название</th>
-                        <th>ИНН</th>
-                        <th>Телефон</th>
-                        <th>Адрес</th>
+                        <th className="width-100 vertical-align">Название</th>
+                        <th className="width-100 vertical-align">ИНН</th>
+                        <th className="width-100 vertical-align">Телефон</th>
+                        <th className="width-100 vertical-align">Адрес</th>
                     </tr>
                 </thead>
                 <tbody>
+                {props.data.map((row, index) => {
+                        const { id, name, phone, inn, address, selected } = row;
+                        return (
+                            <tr className={selected ? "table-row-selected" : "table-row-non-selected"} key={id} onClick={props.handleRowClick.bind(this, id)}>
+                                <td>{name}</td>
+                                <td>{inn}</td>
+                                <td>{phone}</td>
+                                <td>{address}</td>
+                            </tr>
+                        );
+                    })}
                     <tr>
-                        <td>ЕвроАвто</td>
-                        <td>1987236487923</td>
-                        <td>89876543210</td>
-                        <td>РТ, Казань, Яруллина 6</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>ТТС</td>
-                        <td>9871263545234</td>
-                        <td>89871234560</td>
-                        <td>РТ, Казань, Вахитова 21</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>

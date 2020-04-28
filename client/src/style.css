@@ -571,6 +571,13 @@ main {
 .demand-input {
     width: 200px !important;
     margin-right: 20px;
+    background-color: white;
+    color: black;
+}
+
+.demand-input:disabled {
+    background-color: white !important;
+    color: black;
 }
 
 .demand-label {

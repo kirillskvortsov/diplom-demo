@@ -53,7 +53,7 @@ class ClientCatalogPage extends React.Component {
                     id: 2,
                     name: "Петров П.П.",
                     phone: '81922831928',
-                    email: 'petrov@mail.ri',
+                    email: 'petrov@mail.ru',
                     address: 'РТ, Казань, Вахитова 25',
                     parts: [
                         {

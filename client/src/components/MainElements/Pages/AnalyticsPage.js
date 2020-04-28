@@ -11,8 +11,8 @@ function AnalyticsPage() {
             </div>
             <ul className="analytics-ul">
                 {info.map((element)=> 
-                    <Link to={element.anchor} className="analytics-a">
-                        <li className="analytics-li" key={element.id}>
+                    <Link to={element.anchor} className="analytics-a" key={element.id}>
+                        <li className="analytics-li">
                             <img src={element.srcCard} alt={element.alt} className="analytics-img" />
                             <p className="analytics-p">{element.text}</p>
                         </li>
