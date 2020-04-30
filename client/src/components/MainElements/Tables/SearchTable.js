@@ -6,27 +6,27 @@ function SearchTable(props) {
         <div className="table-container search-table-container">
             <Table striped bordered hover className="table">
                 <thead>
-                    <tr>
+                    <tr className="table-header">
                         <th className="width-100 vertical-align">Артикул</th>
-                        <th className="width-150 vertical-align">VIN-номер</th>
+                        <th className="width-100 vertical-align">VIN-номер</th>
+                        <th className="width-100 vertical-align">Производитель</th>
                         <th className="width-100 vertical-align">Количество на складе</th>
                         <th className="width-100 vertical-align">Количество в резерве</th>
-                        <th className="width-100 vertical-align">Срок доставки</th>
-                        <th className="width-150 vertical-align">Стоимость</th>
-                        <th className="vertical-align">Описание</th>
+                        <th className="width-100 vertical-align">Стоимость, руб.</th>
+                        <th className="width-300 vertical-align">Описание</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {props.data.map((row, index) => {
-                        const {id, art, vin, stock, reserve, time, cost, desc} = row;
-                        return(
-                            <tr key={id}>
+                {props.data.map((row, index) => {
+                        const { id, art, vin, supp, cols, colr, price, desc, selected } = row;
+                        return (
+                            <tr className={selected ? "table-row-selected" : "table-row-non-selected"} key={id} onClick={props.handleRowClick.bind(this, id)}>
                                 <td>{art}</td>
                                 <td>{vin}</td>
-                                <td>{stock}</td>
-                                <td>{reserve}</td>
-                                <td>{time} дней</td>
-                                <td>{cost}</td>
+                                <td>{supp}</td>
+                                <td>{cols}</td>
+                                <td>{colr}</td>
+                                <td>{price}</td>
                                 <td>{desc}</td>
                             </tr>
                         );

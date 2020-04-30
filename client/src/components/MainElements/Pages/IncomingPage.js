@@ -130,6 +130,16 @@ class IncomingPage extends React.Component {
         this.handleFormRowClick = this.handleFormRowClick.bind(this);
     }
 
+    componentDidMount() {
+        this.setState({
+            table: localStorage.getItem('incomingTable') ? JSON.parse(localStorage.getItem('incomingTable')) : this.state.table
+        })
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('incomingTable', JSON.stringify(this.state.table));
+    }
+
     handleSearch(e) {
         const { name, value } = e.target
         this.setState({
@@ -161,7 +171,7 @@ class IncomingPage extends React.Component {
         copy = copy.filter((item) => {
             let date = item.date1.substring(8, 10) + '.' + item.date1.substring(5, 7) + '.' + item.date1.substring(0, 4);
             return (
-                item.number.toLocaleLowerCase().includes(inp) ||
+                item.number.toLocaleLowerCase().includes(inp.toLocaleLowerCase()) ||
                 date.includes(inp) ||
                 item.supplier.toLocaleLowerCase().includes(inp.toLocaleLowerCase())
             )
@@ -292,6 +302,7 @@ class IncomingPage extends React.Component {
     }
 
     render() {
+        //localStorage.clear();
         const tableData = this.handleInput();
         return (
             <main className="main main-rush">

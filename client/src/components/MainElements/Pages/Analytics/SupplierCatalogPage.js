@@ -47,20 +47,28 @@ class SupplierCatalogPage extends React.Component {
                 selected: false,
             },
             value: '',
-            id: 10000001,
             new: true
         }
 
         this.handleSaveButtonClick = this.handleSaveButtonClick.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.handleTableChange = this.handleTableChange.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleRowClick = this.handleRowClick.bind(this);
         this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);
         this.handleEditButtonClick = this.handleEditButtonClick.bind(this);
         this.handleNewButtonClick = this.handleNewButtonClick.bind(this);
         this.handleCloseModalClick = this.handleCloseModalClick.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({
+            table: localStorage.getItem('supplierCatalogTable') ? JSON.parse(localStorage.getItem('supplierCatalogTable')) : this.state.table
+        })
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('supplierCatalogTable', JSON.stringify(this.state.table));
     }
 
     handleSearch(e) {
@@ -76,15 +84,6 @@ class SupplierCatalogPage extends React.Component {
         modal[0][name] = value;
         this.setState({
             modalData: modal
-        });
-    }
-
-    handleTableChange(e) {
-        const modalData = cloneDeep(this.state.modalData);
-        const { name, value } = e.target;
-        modalData[0].parts.find(i => i.selected === true)[name] = value;
-        this.setState({
-            modalData: modalData
         });
     }
 
@@ -159,7 +158,7 @@ class SupplierCatalogPage extends React.Component {
         this.setState({
             modalData: [{
                 id: this.state.id,
-                name: this.state.date,
+                name: '',
                 phone: '',
                 email: '',
                 address: '',
@@ -179,6 +178,7 @@ class SupplierCatalogPage extends React.Component {
     }
 
     render() {
+        //localStorage.clear();
         const tableData = this.handleInput();
         return (
             <main className="main main-rush">
@@ -205,10 +205,8 @@ class SupplierCatalogPage extends React.Component {
                 <SupplierCatalogModal
                     data={this.state.modalData}
                     show={this.state.modalShow}
-                    date={this.state.date}
                     onHide={() => this.handleCloseModalClick(false)}
                     handleChange={this.handleChange}
-                    handleTableChange={this.handleTableChange}
                     handleSaveButtonClick={(e) => this.handleSaveButtonClick(e, false)}
                 />
                 <div className="supplier-footer">

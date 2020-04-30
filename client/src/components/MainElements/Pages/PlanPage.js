@@ -151,6 +151,16 @@ class PlanPage extends React.Component {
         this.handleFormRowClick = this.handleFormRowClick.bind(this);
     }
 
+    componentDidMount() {
+        this.setState({
+            table: localStorage.getItem('planTable') ? JSON.parse(localStorage.getItem('planTable')) : this.state.table
+        })
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('planTable', JSON.stringify(this.state.table));
+    }
+
     handleSearch(e) {
         const { name, value } = e.target
         this.setState({
@@ -187,7 +197,7 @@ class PlanPage extends React.Component {
             suppliers = supplierArray.join(', ');
             let date = item.date1.substring(8, 10) + '.' + item.date1.substring(5, 7) + '.' + item.date1.substring(0, 4);
             return(
-                item.number.toLocaleLowerCase().includes(inp) ||
+                item.number.toLocaleLowerCase().includes(inp.toLocaleLowerCase()) ||
                 date.includes(inp) ||
                 suppliers.toLocaleLowerCase().includes(inp.toLocaleLowerCase())
             )})
@@ -321,6 +331,7 @@ class PlanPage extends React.Component {
     }
 
     render() {
+        //localStorage.clear();
         const tableData = this.handleInput();
         return(
             <main className="main main-rush">

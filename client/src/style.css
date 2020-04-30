@@ -225,6 +225,10 @@ main {
     outline: 2px solid black
 }
 
+.search-table-container {
+    height: 500px;
+}
+
 /* ----------------------------------------------------------------------------------------------- */
 /* ------------------------------STYLES FOR MAIN: SEARCH------------------------------------------ */
 /* ----------------------------------------------------------------------------------------------- */
@@ -469,7 +473,7 @@ main {
 
 .analytics-ul {
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
     gap: 50px;
 }
 
@@ -501,7 +505,7 @@ main {
     justify-content: center;
     border: .5px solid #535353;
     border-radius: 5px;
-    width: 200px;
+    width: 350px;
     height: 200px;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
 }

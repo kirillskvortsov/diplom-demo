@@ -133,6 +133,16 @@ class RushPage extends React.Component {
         this.handleFormRowClick = this.handleFormRowClick.bind(this);
     }
 
+    componentDidMount() {
+        this.setState({
+            table: localStorage.getItem('rushTable') ? JSON.parse(localStorage.getItem('rushTable')) : this.state.table
+        })
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('rushTable', JSON.stringify(this.state.table));
+    }
+
     handleSearch(e) {
         const { name, value } = e.target
         this.setState({
@@ -300,6 +310,7 @@ class RushPage extends React.Component {
     }
 
     render() {
+        //localStorage.clear();
         const tableData = this.handleInput();
         return (
             <main className="main main-rush">

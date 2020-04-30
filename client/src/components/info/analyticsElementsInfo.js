@@ -1,19 +1,5 @@
 const info = [
     {
-        id: 1,
-        alt: 'clients',
-        text: 'Клиенты',
-        anchor: "/ClientCatalogPage",
-        srcCard: "assets/analytics/contacts.png"
-    }, 
-    {
-        id: 2,
-        alt: 'spare parts',
-        text: 'Запчасти',
-        anchor: "/SpareCatalogPage",
-        srcCard: "assets/analytics/settings.png"
-    }, 
-    {
         id: 3,
         alt: 'suppliers',
         text: 'Поставщики',
