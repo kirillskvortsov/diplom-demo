@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap';
 
 function SupplierCatalogTable(props) {
     return(
-        <div className="table-container supplier-table-container">
+        <div className="table-container table-460-height">
             <Table striped bordered hover className="table">
                 <thead>
                     <tr className="table-header">

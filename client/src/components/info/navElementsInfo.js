@@ -13,39 +13,39 @@ const info = [
         text: 'Поиск',
         src:'assets/search.png',
         anchor: "/SearchPage",
-        srcCard: "assets/background/search.png"
+        srcCard: "assets/background/bg.jpg"
     }, 
     {
         id: 3,
-        alt: 'tasks',
-        text: 'Задачи',
-        src:'assets/list.png',
-        anchor: "/TasksPage",
-        srcCard: "assets/background/tasks.png"
-    }, 
-    {
-        id: 4,
         alt: 'rush',
         text: 'Срочный заказ',
         src:'assets/timer.png',
         anchor: "/RushPage",
-        srcCard: "assets/background/rush.png"
+        srcCard: "assets/background/bg.jpg"
     }, 
     {
-        id: 5,
+        id: 4,
         alt: 'plan',
         text: 'Плановый заказ',
         src:'assets/plan.png',
         anchor: "/PlanPage",
-        srcCard: "assets/background/plan.png"
+        srcCard: "assets/background/bg.jpg"
     }, 
     {
-        id: 6,
+        id: 5,
         alt: 'supplier',
         text: 'Заказ поставщику',
         src:'assets/delivery.png',
         anchor: "/SupplierPage",
-        srcCard: "assets/background/supplier.png"
+        srcCard: "assets/background/bg.jpg"
+    }, 
+    {
+        id: 6,
+        alt: 'incoming',
+        text: 'Приходные накладные',
+        src:'assets/incoming.png',
+        anchor: "/IncomingPage",
+        srcCard: "assets/background/bg.jpg"
     }, 
     {
         id: 7,
@@ -53,7 +53,7 @@ const info = [
         text: 'Аналитика',
         src:'assets/chart.png',
         anchor: "/AnalyticsPage",
-        srcCard: "assets/background/analytics.png"
+        srcCard: "assets/background/bg.jpg"
     }, 
 ];
 

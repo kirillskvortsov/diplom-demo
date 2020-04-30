@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Link } from "react-router-dom";
 import cloneDeep from 'lodash/cloneDeep';
 import SupplierTable from '../Tables/SupplierTable.js';
 import SupplierModal from '../Modals/SupplierModal';
@@ -367,11 +366,6 @@ class SupplierPage extends React.Component {
                     handleFormRowClick={this.handleFormRowClick}
                     handleFormDeleteButtonClick={this.handleFormDeleteButtonClick}
                 />
-                <div className="supplier-footer">
-                    <Link to="/IncomingPage">
-                        <Button>Приходные накладные</Button>
-                    </Link>
-                </div>
             </main>
         );
     }

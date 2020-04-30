@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { Link } from "react-router-dom";
 import cloneDeep from 'lodash/cloneDeep';
 import SearchTable from '../Tables/SearchTable';
 import SearchModal from '../Modals/SearchModal';
@@ -179,7 +178,7 @@ class SearchPage extends React.Component {
     }
 
     render() {
-        //localStorage.clear();
+        localStorage.clear();
         const tableData = this.handleInput();
         return (
             <main className="main main-rush">

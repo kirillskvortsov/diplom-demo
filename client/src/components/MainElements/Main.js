@@ -2,7 +2,6 @@ import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import HomePage from './Pages/HomePage';
 import SearchPage from './Pages/SearchPage';
-import TasksPage from './Pages/TasksPage';
 import RushPage from './Pages/RushPage';
 import PlanPage from './Pages/PlanPage';
 import SupplierPage from './Pages/SupplierPage';
@@ -23,9 +22,6 @@ function Main() {
           </Route>
           <Route path="/SearchPage">
             <SearchPage />
-          </Route>
-          <Route path="/TasksPage">
-            <TasksPage />
           </Route>
           <Route path="/RushPage">
             <RushPage />

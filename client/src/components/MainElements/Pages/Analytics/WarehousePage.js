@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import WarehouseTable from '../../Tables/WarehouseTable';
 
 function WarehousePage() {
-    const [area, changeArea] = useState(12000);
-    const [areaUsed, changeAreaUsed] = useState(6000);
+    const area = useState(12000);
+    const areaUsed = useState(6000);
 
     return(
         <main className="main main-analytics">
