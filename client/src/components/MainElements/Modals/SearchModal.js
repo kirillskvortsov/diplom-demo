@@ -7,7 +7,6 @@ function SearchModal(props) {
             id: 0,
             art: '',
             cols: 0,
-            vin: '',
             colr: 0,
             supp: '',
             price: 0,
@@ -57,17 +56,6 @@ function SearchModal(props) {
                             <Form.Control
                                 className="rush-form-input"
                                 onChange={props.handleChange}
-                                name="vin"
-                                type="text"
-                                value={data.vin}
-                                required
-                            />
-                            <Form.Label className="rush-form-label">VIN-номер</Form.Label>
-                        </Form.Group>
-                        <Form.Group className="rush-form-group">
-                            <Form.Control
-                                className="rush-form-input"
-                                onChange={props.handleChange}
                                 name="colr"
                                 type="number"
                                 value={data.colr}
@@ -97,14 +85,14 @@ function SearchModal(props) {
                             />
                             <Form.Label className="rush-form-label">Стоимость, руб.</Form.Label>
                         </Form.Group>
-                        <Form.Group className="rush-form-group" controlId="exampleForm.ControlTextarea1">
+                        <Form.Group className="rush-form-group">
                             <Form.Control
+                                className="rush-form-input"
                                 onChange={props.handleChange}
                                 name="desc"
+                                type="text"
                                 value={data.desc}
                                 required
-                                className="rush-form-input"
-                                as="textarea" rows="3"
                             />
                             <Form.Label className="rush-form-label">Описание</Form.Label>
                         </Form.Group>

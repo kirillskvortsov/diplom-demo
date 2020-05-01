@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import SeasonTable from '../../Tables/SeasonTable';
 
 function SeasonPage() {
-    const coef = useState(0.97);
+    const [coef, changeCoef] = useState(0.97);
 
     return(
         <main className="main main-analytics">

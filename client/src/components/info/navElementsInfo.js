@@ -18,7 +18,7 @@ const info = [
     {
         id: 3,
         alt: 'rush',
-        text: 'Срочный заказ',
+        text: 'Срочные заказы',
         src:'assets/timer.png',
         anchor: "/RushPage",
         srcCard: "assets/background/bg.jpg"
@@ -26,7 +26,7 @@ const info = [
     {
         id: 4,
         alt: 'plan',
-        text: 'Плановый заказ',
+        text: 'Плановые заказы',
         src:'assets/plan.png',
         anchor: "/PlanPage",
         srcCard: "assets/background/bg.jpg"
@@ -34,7 +34,7 @@ const info = [
     {
         id: 5,
         alt: 'supplier',
-        text: 'Заказ поставщику',
+        text: 'Заказы поставщику',
         src:'assets/delivery.png',
         anchor: "/SupplierPage",
         srcCard: "assets/background/bg.jpg"

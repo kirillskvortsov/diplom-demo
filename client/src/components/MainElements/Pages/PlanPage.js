@@ -27,22 +27,22 @@ class PlanPage extends React.Component {
                     parts: [
                         {
                             id: 1,
-                            art: "0000001",
-                            desc: "запчасть_1",
+                            art: "8K0941597B",
+                            desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 4,
                             supp: "ЕвроАвто",
                             date: '2020-02-07',
-                            price: 2498,
+                            price: 3849,
                             selected: false
                         },
                         {
                             id: 2,
-                            art: "0000002",
-                            desc: "запчасть_2",
+                            art: "5Q0201801",
+                            desc: "Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat",
                             col: 6,
                             supp: "ЕвроАвто",
                             date: '2020-02-07',
-                            price: 12980,
+                            price: 692,
                             selected: false
                         }
                     ],
@@ -57,22 +57,22 @@ class PlanPage extends React.Component {
                     parts: [
                         {
                             id: 3,
-                            art: "0000003",
-                            desc: "запчасть_3",
+                            art: "5Q1614724",
+                            desc: "Трубка тормозная Skoda, VW, Audi, Seat",
                             col: 6,
                             supp: "ТТС",
                             date: '2020-03-06',
-                            price: 12073,
+                            price: 879,
                             selected: false
                         },
                         {
                             id: 4,
-                            art: "0000004",
-                            desc: "запчасть_4",
+                            art: "5EU807421B",
+                            desc: "Бампер задний Skoda Octavia (A7) 2013>",
                             col: 8,
                             supp: "ТТС",
                             date: '2020-03-06',
-                            price: 10730,
+                            price: 9214,
                             selected: false
                         }
                     ],
@@ -87,22 +87,22 @@ class PlanPage extends React.Component {
                     parts: [
                         {
                             id: 5,
-                            art: "0000005",
-                            desc: "запчасть_5",
+                            art: "5Q0413023FH",
+                            desc: "Амортизатор передний Skoda, VW, Audi, Seat",
                             col: 12,
                             supp: "ТТС",
                             date: '2020-04-04',
-                            price: 1073,
+                            price: 3167,
                             selected: false
                         },
                         {
                             id: 6,
-                            art: "0000006",
-                            desc: "запчасть_6",
+                            art: "8K0941597B",
+                            desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 13,
                             supp: "ТТС",
                             date: '2020-04-04',
-                            price: 2073,
+                            price: 3849,
                             selected: false
                         },
                     ],

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+
 import cloneDeep from 'lodash/cloneDeep';
 import SearchTable from '../Tables/SearchTable';
 import SearchModal from '../Modals/SearchModal';
@@ -13,24 +14,52 @@ class SearchPage extends React.Component {
             table: [
                 {
                     id: 1,
-                    art: '0003758',
-                    cols: 23,
-                    vin: '5Q0129621B',
-                    colr: 0,
+                    art: '8K0941597B',
+                    cols: 5,
+                    colr: 1,
                     supp: 'VAG',
-                    price: 692,
-                    desc: 'Воздуховод SKODA OCTAVIA (A7) (2013>)',
+                    price: 3849,
+                    desc: 'Блок ксеноновой лампы Skoda, VW, Audi',
                     selected: false
                 },
                 {
                     id: 2,
-                    art: '0003728',
+                    art: '5Q0201801',
                     cols: 12,
-                    vin: '5E0998226',
                     colr: 5,
                     supp: 'VAG',
-                    price: 418,
-                    desc: 'Кронштейн фар правый Octavia (A7) 2013>',
+                    price: 692,
+                    desc: 'Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat',
+                    selected: false
+                },
+                {
+                    id: 3,
+                    art: '5Q1614724',
+                    cols: 5,
+                    colr: 0,
+                    supp: 'VAG',
+                    price: 879,
+                    desc: 'Трубка тормозная Skoda, VW, Audi, Seat',
+                    selected: false
+                },
+                {
+                    id: 4,
+                    art: '5EU807421B',
+                    cols: 1,
+                    colr: 0,
+                    supp: 'VAG',
+                    price: 9214,
+                    desc: 'Бампер задний Skoda Octavia (A7) 2013>',
+                    selected: false
+                },
+                {
+                    id: 5,
+                    art: '5Q0413023FH',
+                    cols: 2,
+                    colr: 0,
+                    supp: 'VAG',
+                    price: 3167,
+                    desc: 'Амортизатор передний Skoda, VW, Audi, Seat',
                     selected: false
                 },
             ],
@@ -38,7 +67,6 @@ class SearchPage extends React.Component {
                 id: 0,
                 art: '',
                 cols: 0,
-                vin: '',
                 colr: 0,
                 supp: '',
                 price: 0,
@@ -92,7 +120,6 @@ class SearchPage extends React.Component {
         let inp = cloneDeep(this.state.value.toString());
         copy = copy.filter((item) =>
             item.art.toLocaleLowerCase().includes(inp.toLocaleLowerCase()) ||
-            item.vin.toLocaleLowerCase().includes(inp.toLocaleLowerCase()) ||
             item.desc.toLocaleLowerCase().includes(inp.toLocaleLowerCase())
         )
         return copy;
@@ -160,7 +187,6 @@ class SearchPage extends React.Component {
                 id: this.state.id,
                 art: '',
                 cols: 0,
-                vin: '',
                 colr: 0,
                 supp: '',
                 price: 0,
@@ -178,7 +204,6 @@ class SearchPage extends React.Component {
     }
 
     render() {
-        localStorage.clear();
         const tableData = this.handleInput();
         return (
             <main className="main main-rush">
@@ -193,7 +218,7 @@ class SearchPage extends React.Component {
                         className="form-control rush-input"
                         type="search"
                         name="value"
-                        placeholder="Артикул, VIN или описание"
+                        placeholder="Артикул или описание"
                         value={this.state.value}
                         onChange={this.handleSearch}
                     />

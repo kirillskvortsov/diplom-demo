@@ -31,11 +31,11 @@ class RushPage extends React.Component {
                     parts: [
                         {
                             id: 1,
-                            art: "0000001",
-                            desc: "запчасть_1",
+                            art: "8K0941597B",
+                            desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 1,
                             supp: "ЕвроАвто",
-                            price: 2498,
+                            price: 3849,
                             selected: false
                         }
                     ],
@@ -54,11 +54,11 @@ class RushPage extends React.Component {
                     parts: [
                         {
                             id: 1,
-                            art: "0000002",
-                            desc: "запчасть_2",
-                            col: 1,
+                            art: "5Q0201801",
+                            desc: "Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat",
+                            col: 2,
                             supp: "ТТС",
-                            price: 1073,
+                            price: 692,
                             selected: false
                         }
                     ],
@@ -77,11 +77,11 @@ class RushPage extends React.Component {
                     parts: [
                         {
                             id: 1,
-                            art: "0000002",
-                            desc: "запчасть_2",
+                            art: "5EU807421B",
+                            desc: "Бампер задний Skoda Octavia (A7) 2013",
                             col: 1,
                             supp: "",
-                            price: 1073,
+                            price: 9214,
                             selected: false
                         }
                     ],
@@ -173,11 +173,12 @@ class RushPage extends React.Component {
         let inp = cloneDeep(this.state.value.toString());
         copy = copy.filter((item) => {
             let date = item.date1.substring(8, 10) + '.' + item.date1.substring(5, 7) + '.' + item.date1.substring(0, 4);
-            return(
+            return (
                 item.number.toLocaleLowerCase().includes(inp) ||
                 date.includes(inp) ||
                 item.name.toLocaleLowerCase().includes(inp.toLocaleLowerCase())
-        )})
+            )
+        })
         return copy;
     }
 
@@ -231,11 +232,34 @@ class RushPage extends React.Component {
         e.preventDefault();
         const modal = cloneDeep(this.state.modalData[0]);
         if (this.state.new) {
-            this.setState({
-                table: this.state.table.concat(modal),
-                id: this.state.id + 1,
-                modalShow: bool,
-            });
+            if (modal.supplier !== "Склад") {
+                let supplierItems = JSON.parse(localStorage.getItem('supplierTable'));
+                const suppliers = JSON.parse(localStorage.getItem('supplierCatalogTable'));
+                const supplierId = JSON.parse(localStorage.getItem('supplierId'));
+                const newSupplierItem = cloneDeep(supplierItems[0]);
+                const supplier = suppliers.filter(i => i.name === modal.parts[0].supp)
+                const parts = cloneDeep(modal).parts;
+                parts.map(i => delete i.supp);
+                newSupplierItem.date1 = modal.date1;
+                newSupplierItem.date2 = modal.date2;
+                newSupplierItem.email = supplier[0].email;
+                newSupplierItem.inn = supplier[0].inn;
+                newSupplierItem.kpp = supplier[0].kpp;
+                newSupplierItem.id = supplierId;
+                newSupplierItem.number = "П" + modal.number;
+                newSupplierItem.parts = parts;
+                newSupplierItem.status = "Ожидает отправки";
+                newSupplierItem.supplier = supplier[0].name;
+                newSupplierItem.tel = supplier[0].phone;
+                supplierItems = supplierItems.concat(newSupplierItem);
+                localStorage.setItem('supplierId', JSON.stringify(supplierId + 1));
+                localStorage.setItem('supplierTable', JSON.stringify(supplierItems));
+                this.setState({
+                    table: this.state.table.concat(modal),
+                    id: this.state.id + 1,
+                    modalShow: bool,
+                });
+            }
         } else {
             let copy = cloneDeep(this.state.table);
             for (let i = 0; i < copy.length; i++) {

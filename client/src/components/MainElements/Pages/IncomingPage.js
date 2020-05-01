@@ -20,51 +20,35 @@ class IncomingPage extends React.Component {
             table: [
                 {
                     id: 1,
-                    number: "Н0231",
-                    date1: "2020-02-01",
-                    supplier: 'ЕвроАвто',
+                    number: "Н000341",
+                    date1: "2020-02-14",
+                    supplier: 'ТТС',
                     status: "Принято, проверено",
                     parts: [
                         {
                             id: 1,
-                            art: "0000001",
-                            desc: "запчасть_1",
+                            art: "8K0941597B",
+                            desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 1,
-                            price: 2498,
+                            price: 3849,
                             selected: false
                         },
-                        {
-                            id: 2,
-                            art: "0000002",
-                            desc: "запчасть_2",
-                            col: 1,
-                            price: 1872,
-                            selected: false
-                        }
                     ],
                     selected: false
                 },
                 {
                     id: 2,
-                    number: "Н0232",
-                    date1: "2020-02-01",
-                    supplier: 'VAG',
-                    status: "Принято, ожидает проверки",
+                    number: "Н000342",
+                    date1: "2020-02-15",
+                    supplier: 'ТТС',
+                    status: "Принято, проверено",
                     parts: [
                         {
                             id: 3,
-                            art: "0000003",
-                            desc: "запчасть_3",
-                            col: 1,
-                            price: 1891,
-                            selected: false
-                        },
-                        {
-                            id: 4,
-                            art: "0000001",
-                            desc: "запчасть_1",
-                            col: 1,
-                            price: 986,
+                            art: "5Q0201801",
+                            desc: "Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat",
+                            col: 2,
+                            price: 692,
                             selected: false
                         }
                     ],
@@ -72,17 +56,77 @@ class IncomingPage extends React.Component {
                 },
                 {
                     id: 3,
-                    number: "Н0233",
+                    number: "Н000343",
                     date1: "2020-03-01",
+                    supplier: 'ТТС',
+                    status: "Принято, ожидает проверки",
+                    parts: [
+                        {
+                            id: 5,
+                            art: "5Q1614724",
+                            desc: "Трубка тормозная Skoda, VW, Audi, Seat",
+                            col: 6,
+                            price: 879,
+                            selected: false
+                        },
+                        {
+                            id: 6,
+                            art: "5EU807421B",
+                            desc: "Бампер задний Skoda Octavia (A7) 2013>",
+                            col: 8,
+                            price: 9214,
+                            selected: false
+                        }
+                    ],
+                    selected: false
+                },
+                {
+                    id: 4,
+                    number: "Н000344",
+                    date1: "2020-02-01",
+                    supplier: 'ЕвроАвто',
+                    status: "Принято, ожидает проверки",
+                    parts: [
+                        {
+                            id: 7,
+                            art: "8K0941597B",
+                            desc: "Блок ксеноновой лампы Skoda, VW, Audi",
+                            col: 4,
+                            price: 3849,
+                            selected: false
+                        },
+                        {
+                            id: 8,
+                            art: "5Q0201801",
+                            desc: "Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat",
+                            col: 6,
+                            price: 692,
+                            selected: false
+                        }
+                    ],
+                    selected: false
+                },
+                {
+                    id: 5,
+                    number: "Н000345",
+                    date1: "2020-04-01",
                     supplier: 'ТТС',
                     status: "Не принято",
                     parts: [
                         {
-                            id: 5,
-                            art: "0000005",
-                            desc: "запчасть_5",
-                            col: 1,
-                            price: 1073,
+                            id: 8,
+                            art: "5Q0413023FH",
+                            desc: "Амортизатор передний Skoda, VW, Audi, Seat",
+                            col: 12,
+                            price: 3167,
+                            selected: false
+                        },
+                        {
+                            id: 9,
+                            art: "8K0941597B",
+                            desc: "Блок ксеноновой лампы Skoda, VW, Audi",
+                            col: 13,
+                            price: 3849,
                             selected: false
                         }
                     ],
