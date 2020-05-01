@@ -80,7 +80,7 @@ class RushPage extends React.Component {
                             art: "5EU807421B",
                             desc: "Бампер задний Skoda Octavia (A7) 2013",
                             col: 1,
-                            supp: "",
+                            supp: "ЕвроАвто",
                             price: 9214,
                             selected: false
                         }
@@ -96,7 +96,7 @@ class RushPage extends React.Component {
                 email: "",
                 date1: date,
                 date2: date,
-                supplier: "",
+                supplier: "Склад",
                 status: "Не доставлено",
                 parts:
                     [
@@ -104,8 +104,8 @@ class RushPage extends React.Component {
                             id: 1,
                             art: "",
                             desc: "",
-                            col: 0,
-                            supp: "",
+                            col: 1,
+                            supp: "ЕвроАвто",
                             price: 0,
                             selected: false
                         }
@@ -289,7 +289,7 @@ class RushPage extends React.Component {
                 email: "",
                 date1: this.state.date,
                 date2: this.state.date,
-                supplier: "",
+                supplier: "Склад",
                 status: "Не доставлено",
                 parts:
                     [
@@ -297,8 +297,8 @@ class RushPage extends React.Component {
                             id: 1,
                             art: "",
                             desc: "",
-                            col: 0,
-                            supp: "",
+                            col: 1,
+                            supp: "ЕвроАвто",
                             price: 0,
                             selected: false
                         }
@@ -321,8 +321,8 @@ class RushPage extends React.Component {
             id: this.state.partsId,
             art: "",
             desc: "",
-            col: 0,
-            supp: "",
+            col: 1,
+            supp: "ЕвроАвто",
             price: 0,
             selected: false
         }];

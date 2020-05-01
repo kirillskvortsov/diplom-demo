@@ -47,6 +47,7 @@ function SearchModal(props) {
                                 onChange={props.handleChange}
                                 name="cols"
                                 type="number"
+                                min="0"
                                 value={data.cols}
                                 required
                             />
@@ -58,6 +59,7 @@ function SearchModal(props) {
                                 onChange={props.handleChange}
                                 name="colr"
                                 type="number"
+                                min="0"
                                 value={data.colr}
                                 required
                             />
@@ -80,6 +82,7 @@ function SearchModal(props) {
                                 onChange={props.handleChange}
                                 name="price"
                                 type="number"
+                                min="0"
                                 value={data.price}
                                 required
                             />

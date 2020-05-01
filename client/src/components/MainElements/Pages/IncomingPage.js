@@ -145,7 +145,7 @@ class IncomingPage extends React.Component {
                             id: 1,
                             art: "",
                             desc: "",
-                            col: 0,
+                            col: 1,
                             price: 0,
                             selected: false
                         }
@@ -310,7 +310,7 @@ class IncomingPage extends React.Component {
                             id: 1,
                             art: "",
                             desc: "",
-                            col: 0,
+                            col: 1,
                             price: 0,
                             selected: false
                         }
@@ -333,7 +333,7 @@ class IncomingPage extends React.Component {
             id: this.state.partsId,
             art: "",
             desc: "",
-            col: 0,
+            col: 1,
             price: 0,
             selected: false
         }];

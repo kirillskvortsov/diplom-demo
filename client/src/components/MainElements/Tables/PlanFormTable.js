@@ -2,12 +2,12 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 
 function PlanFormTable(props) {
-    return(
+    const parts = JSON.parse(localStorage.getItem('searchTable'));
+    return (
         <div className="table-container rush-form-table-container">
             <Table bordered className="table">
                 <thead>
                     <tr>
-                        <th>Описание</th>
                         <th>Артикул</th>
                         <th>Количество</th>
                         <th>Поставщик</th>
@@ -24,29 +24,24 @@ function PlanFormTable(props) {
                                 <td>
                                     <input
                                         disabled={selected ? false : true}
-                                        type="text"
-                                        className="table-input"
-                                        onChange={props.handleTableChange}
-                                        value={desc}
-                                        name="desc"
-                                        required
-                                    />
-                                </td>
-                                <td>
-                                    <input
-                                        disabled={selected ? false : true}
-                                        type="text"
                                         className="table-input"
                                         onChange={props.handleTableChange}
                                         value={art}
                                         name="art"
                                         required
+                                        type="text"
+                                        list="data"
+                                        autoComplete="off"
                                     />
+                                    <datalist id="data">
+                                        {parts.map(i => <option key={i.art} value={i.art}>{i.desc}</option>)}
+                                    </datalist>
                                 </td>
                                 <td>
                                     <input
                                         disabled={selected ? false : true}
                                         type="number"
+                                        min="1"
                                         className="table-input"
                                         onChange={props.handleTableChange}
                                         value={col}
@@ -82,6 +77,7 @@ function PlanFormTable(props) {
                                     <input
                                         disabled={selected ? false : true}
                                         type="number"
+                                        min="0"
                                         className="table-input"
                                         onChange={props.handleTableChange}
                                         value={price}
@@ -104,7 +100,6 @@ function PlanFormTable(props) {
                         );
                     }) :
                         <tr>
-                            <td><input type="text" className="table-input" /></td>
                             <td><input type="text" className="table-input" /></td>
                             <td><input type="text" className="table-input" /></td>
                             <td><input type="text" className="table-input" /></td>

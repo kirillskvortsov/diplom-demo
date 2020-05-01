@@ -22,7 +22,7 @@ function SupplierModal(props) {
             id: 1,
             art: "",
             desc: "",
-            col: 0,
+            col: 1,
             price: 0,
             selected: false
           }

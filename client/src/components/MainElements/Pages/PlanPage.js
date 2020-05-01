@@ -20,7 +20,7 @@ class PlanPage extends React.Component {
             table: [
                 {
                     id: 1,
-                    number: "П00031",
+                    number: "00031",
                     date1: "2020-02-01",
                     date2: "2020-02-07",
                     status: "Доставлено, проверено",
@@ -50,7 +50,7 @@ class PlanPage extends React.Component {
                 },
                 {
                     id: 2,
-                    number: "П00032",
+                    number: "00032",
                     date1: "2020-03-01",
                     date2: "2020-03-06",
                     status: "Не доставлено",
@@ -80,7 +80,7 @@ class PlanPage extends React.Component {
                 },
                 {
                     id: 3,
-                    number: "П00033",
+                    number: "00033",
                     date1: "2020-04-01",
                     date2: "2020-04-04",
                     status: "Доставлено, ожидает проверки",
@@ -121,9 +121,9 @@ class PlanPage extends React.Component {
                             id: 1,
                             art: "",
                             desc: "",
-                            col: 0,
-                            supp: "",
-                            date: '',
+                            col: 1,
+                            supp: "ТТС",
+                            date: date,
                             price: 0,
                             selected: false
                         }
@@ -254,6 +254,28 @@ class PlanPage extends React.Component {
         e.preventDefault();
         const modal = cloneDeep(this.state.modalData[0]);
         if (this.state.new) {
+            let supplierItems = JSON.parse(localStorage.getItem('supplierTable'));
+            const suppliers = JSON.parse(localStorage.getItem('supplierCatalogTable'));
+            const supplierId = JSON.parse(localStorage.getItem('supplierId'));
+            const newSupplierItem = cloneDeep(supplierItems[0]);
+            const supplier = suppliers.filter(i => i.name === modal.parts[0].supp)
+            const parts = cloneDeep(modal).parts;
+            parts.map(i => delete i.supp);
+            parts.map(i => delete i.supp);
+            newSupplierItem.date1 = modal.date1;
+            newSupplierItem.date2 = modal.date2;
+            newSupplierItem.email = supplier[0].email;
+            newSupplierItem.inn = supplier[0].inn;
+            newSupplierItem.kpp = supplier[0].kpp;
+            newSupplierItem.id = supplierId;
+            newSupplierItem.number = "П" + modal.number;
+            newSupplierItem.parts = parts;
+            newSupplierItem.status = "Ожидает отправки";
+            newSupplierItem.supplier = supplier[0].name;
+            newSupplierItem.tel = supplier[0].phone;
+            supplierItems = supplierItems.concat(newSupplierItem);
+            localStorage.setItem('supplierId', JSON.stringify(supplierId + 1));
+            localStorage.setItem('supplierTable', JSON.stringify(supplierItems));
             this.setState({
                 table: this.state.table.concat(modal),
                 id: this.state.id + 1,
@@ -292,8 +314,8 @@ class PlanPage extends React.Component {
                             id: 1,
                             art: "",
                             desc: "",
-                            col: 0,
-                            supp: "",
+                            col: 1,
+                            supp: "ТТС",
                             date: this.state.date,
                             price: 0,
                             selected: false
@@ -317,8 +339,8 @@ class PlanPage extends React.Component {
             id: this.state.partsId,
             art: "",
             desc: "",
-            col: 0,
-            supp: "",
+            col: 1,
+            supp: "ТТС",
             price: 0,
             date: this.state.date,
             selected: false

@@ -181,7 +181,7 @@ class SupplierPage extends React.Component {
                             id: 1,
                             art: "",
                             desc: "",
-                            col: 0,
+                            col: 1,
                             price: 0,
                             selected: false
                         }
@@ -369,7 +369,7 @@ class SupplierPage extends React.Component {
                             id: 1,
                             art: "",
                             desc: "",
-                            col: 0,
+                            col: 1,
                             price: 0,
                             selected: false
                         }
@@ -391,7 +391,7 @@ class SupplierPage extends React.Component {
             id: this.state.partsId,
             art: "",
             desc: "",
-            col: 0,
+            col: 1,
             price: 0,
             selected: false
         }];

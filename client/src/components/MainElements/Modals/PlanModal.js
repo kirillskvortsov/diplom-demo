@@ -16,8 +16,8 @@ function PlanModal(props) {
             id: 1,
             art: "",
             desc: "",
-            col: 0,
-            supp: "",
+            col: 1,
+            supp: "ТТС",
             date: props.date,
             price: 0,
             selected: false

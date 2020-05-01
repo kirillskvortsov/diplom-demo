@@ -12,7 +12,7 @@ function RushModal(props) {
       email: "",
       date1: props.date,
       date2: props.date,
-      supplier: "",
+      supplier: "Склад",
       status: "Ожидает отправки",
       parts:
         [
@@ -21,8 +21,8 @@ function RushModal(props) {
             rows: 1,
             art: "",
             desc: "",
-            col: 0,
-            supp: "",
+            col: 1,
+            supp: "ТТС",
             price: 0,
             selected: false
           }
