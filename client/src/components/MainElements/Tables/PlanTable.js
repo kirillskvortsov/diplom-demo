@@ -26,12 +26,10 @@ function PlanTable(props) {
                         supplierArray = [...new Set(supplierArray)];
                         suppliers = supplierArray.join(', ');
                         let color = "";
-                        if (status === "Доставлено, проверено")
+                        if (status === "Доставлено")
                             color = "green";
-                        else if (status === "Доставлено, ожидает проверки")
-                            color = "orange";
                         else
-                            color = "red"
+                            color = "orange";
                         return (
                             <tr className={selected ? "table-row-selected" : "table-row-non-selected"} key={id} onClick={props.handleRowClick.bind(this, id)}>
                                 <td>{number}</td>

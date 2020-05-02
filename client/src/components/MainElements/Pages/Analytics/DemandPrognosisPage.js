@@ -5,27 +5,26 @@ import DemandPrognosisTable from '../../Tables/DemandPrognosisTable';
 
 function DemandPrognosisPage() {
     const currentDate = new Date();
-    const month = currentDate.getMonth() + 1  > 9 ? currentDate.getMonth() + 1 : "0" + (currentDate.getMonth() + 1);
+    const month = currentDate.getMonth() + 1 > 9 ? currentDate.getMonth() + 1 : "0" + (currentDate.getMonth() + 1);
     const year = currentDate.getFullYear();
     const date = year + "-" + month;
 
-    return(
+    return (
         <main className="main main-analytics">
             <div className="analytics-headers">
                 <h1 className="page-header">Прогноз спроса</h1>
-                <h2 className="sub-header height-48 next-plan">До следующего планового заказа: 35 дней</h2>
             </div>
             <Form className="demand-form">
                 <Form.Group className="demand-group">
-                    <Form.Control className="demand-input" type="month" defaultValue={date} disabled/>
+                    <Form.Control className="demand-input" type="month" defaultValue={date} disabled />
                     <Form.Label className="demand-label">Период</Form.Label>
                 </Form.Group>
                 <Form.Group className="demand-group">
-                    <Form.Control className="demand-input" type="text" value="0.98" disabled />
+                    <Form.Control className="demand-input" type="text" value={JSON.parse(localStorage.getItem('coef'))} disabled />
                     <Form.Label className="demand-label">Сезонный коэффициент</Form.Label>
                 </Form.Group>
                 <Form.Group className="demand-group">
-                    <Form.Control className="demand-input" type="text" value="40 дней" disabled />
+                    <Form.Control className="demand-input" type="text" value={JSON.parse(localStorage.getItem('percent'))[0].days + " дней"} disabled />
                     <Form.Label className="demand-label">Точка заказа</Form.Label>
                 </Form.Group>
             </Form>
@@ -33,7 +32,7 @@ function DemandPrognosisPage() {
             <DemandPrognosisTable />
             <div className="analytics-footer">
                 <Link to="/AnalyticsPage">
-                        <Button>Аналитика</Button>
+                    <Button>Аналитика</Button>
                 </Link>
             </div>
         </main>

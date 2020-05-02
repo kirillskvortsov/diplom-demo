@@ -328,7 +328,6 @@ class SupplierPage extends React.Component {
             if (modal.status === "Отправлено" && this.state.table[tableId].status === "Ожидает отправки") {
                 let incItems = JSON.parse(localStorage.getItem('incomingTable'));
                 const newIncItem = cloneDeep(incItems[0]);
-                const parts = cloneDeep(modal).parts;
                 newIncItem.date1 = modal.date1;
                 newIncItem.id = modal.id;
                 newIncItem.number = "Н" + modal.number.substr(1);

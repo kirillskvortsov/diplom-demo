@@ -90,8 +90,7 @@ function IncomingModal(props) {
                 value={data.status}
                 required
               >
-                <option value="Принято, проверено">Принято, проверено</option>
-                <option value="Принято, ожидает проверки">Принято, ожидает проверки</option>
+                <option value="Принято">Принято</option>
                 <option value="Не принято">Не принято</option>
               </Form.Control>
               <Form.Label className="rush-form-label">Статус *</Form.Label>

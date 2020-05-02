@@ -42,6 +42,16 @@ class OrderPointPage extends React.Component {
         this.handleCloseModalClick = this.handleCloseModalClick.bind(this);
     }
 
+    componentDidMount() {
+        this.setState({
+            table: localStorage.getItem('percent') ? JSON.parse(localStorage.getItem('percent')) : this.state.table
+        })
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem('percent', JSON.stringify(this.state.table));
+    }
+
     handleChange(e) {
         const modal = cloneDeep(this.state.modalData);
         const { name, value } = e.target;

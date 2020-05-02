@@ -23,7 +23,7 @@ class PlanPage extends React.Component {
                     number: "00031",
                     date1: "2020-02-01",
                     date2: "2020-02-07",
-                    status: "Доставлено, проверено",
+                    status: "Доставлено",
                     parts: [
                         {
                             id: 1,
@@ -83,7 +83,7 @@ class PlanPage extends React.Component {
                     number: "00033",
                     date1: "2020-04-01",
                     date2: "2020-04-04",
-                    status: "Доставлено, ожидает проверки",
+                    status: "Не доставлено",
                     parts: [
                         {
                             id: 5,

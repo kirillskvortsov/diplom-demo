@@ -27,7 +27,7 @@ class RushPage extends React.Component {
                     date1: "2020-02-14",
                     date2: "2020-02-17",
                     supplier: "Поставщик",
-                    status: "Доставлено, проверено",
+                    status: "Доставлено",
                     parts: [
                         {
                             id: 1,
@@ -73,7 +73,7 @@ class RushPage extends React.Component {
                     date1: "2020-02-15",
                     date2: "2020-02-18",
                     supplier: "Склад",
-                    status: "Доставлено, ожидает проверки",
+                    status: "Не доставлено",
                     parts: [
                         {
                             id: 1,

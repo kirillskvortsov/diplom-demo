@@ -20,12 +20,10 @@ function IncomingTable(props) {
                         let total = 0;
                         row.parts.map(item => total += item.col * item.price);
                         let color = "";
-                        if (status === "Принято, проверено")
+                        if (status === "Принято")
                             color = "green";
-                        else if (status === "Принято, ожидает проверки")
-                            color = "orange";
                         else 
-                            color = "red"
+                            color = "orange"
                         return (
                             <tr className={selected ? "table-row-selected" : "table-row-non-selected"} key={id} onClick={props.handleRowClick.bind(this, id)}>
                                 <td>{number}</td>

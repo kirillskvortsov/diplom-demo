@@ -1,39 +1,43 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 
-function SupplierFormTable(props) {
-    const parts = JSON.parse(localStorage.getItem('searchTable'));
+function SupplierCatalogFormTable(props) {
     return (
         <div className="table-container rush-form-table-container">
             <Table bordered className="table">
                 <thead>
                     <tr>
-                        <th>Артикул</th>
-                        <th>Количество</th>
-                        <th>Цена</th>
-                        <th>Сумма</th>
+                        <th className="width-100 vertical-align">Артикул</th>
+                        <th className="width-300 vertical-align">Описание</th>
+                        <th className="width-100 vertical-align">Цена, руб.</th>
                     </tr>
                 </thead>
                 <tbody>
                     {props.data !== undefined ? props.data.map((row, index) => {
-                        const { id, art, col, price, selected } = row;
+                        const { art, desc, price, selected } = row;
                         return (
-                            <tr key={id} className={selected ? "table-row-selected" : "table-row-non-selected"} onClick={props.handleFormRowClick.bind(this, id)}>
+                            <tr key={art} className={selected ? "table-row-selected" : "table-row-non-selected"} onClick={props.handleFormRowClick.bind(this, art)}>
                                 <td>
                                     <input
                                         disabled={selected ? false : true}
+                                        type="text"
                                         className="table-input"
                                         onChange={props.handleTableChange}
                                         value={art}
                                         name="art"
                                         required
-                                        type="text"
-                                        list="data"
-                                        autoComplete="off"
                                     />
-                                    <datalist id="data">
-                                        {parts.map(i => <option key={i.art} value={i.art}>{i.desc}</option>)}
-                                    </datalist>
+                                </td>
+                                <td>
+                                    <input
+                                        disabled={selected ? false : true}
+                                        type="text"
+                                        className="table-input"
+                                        onChange={props.handleTableChange}
+                                        value={desc}
+                                        name="desc"
+                                        required
+                                    />
                                 </td>
                                 <td>
                                     <input
@@ -42,30 +46,8 @@ function SupplierFormTable(props) {
                                         min="1"
                                         className="table-input"
                                         onChange={props.handleTableChange}
-                                        value={col}
-                                        name="col"
-                                        required
-                                    />
-                                </td>
-                                <td>
-                                    <input
-                                        disabled={selected ? false : true}
-                                        type="number"
-                                        className="table-input"
-                                        onChange={props.handleTableChange}
                                         value={price}
                                         name="price"
-                                        required
-                                    />
-                                </td>
-                                <td>
-                                    <input
-                                        disabled
-                                        type="number"
-                                        className="table-input"
-                                        onChange={props.handleTableChange}
-                                        value={price * col}
-                                        name="sum"
                                         required
                                     />
                                 </td>
@@ -86,4 +68,4 @@ function SupplierFormTable(props) {
     );
 }
 
-export default SupplierFormTable;
+export default SupplierCatalogFormTable;

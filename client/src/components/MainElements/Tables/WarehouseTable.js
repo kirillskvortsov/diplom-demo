@@ -15,13 +15,13 @@ function WarehouseTable(props) {
                 <tbody>
                     <tr>
                         <td>Апрель 2020</td>
-                        <td>11000</td>
-                        <td>3000</td>
+                        <td>1300</td>
+                        <td>600</td>
                     </tr>
                     <tr>
                         <td>Март 2020</td>
-                        <td>10000</td>
-                        <td>5000</td>
+                        <td>1000</td>
+                        <td>560</td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>

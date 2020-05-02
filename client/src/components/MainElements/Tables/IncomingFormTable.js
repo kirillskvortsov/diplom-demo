@@ -16,7 +16,7 @@ function IncomingFormTable(props) {
                 </thead>
                 <tbody>
                     {props.data !== undefined ? props.data.map((row, index) => {
-                        const { id, art, col, desc, price, selected } = row;
+                        const { id, art, col, price, selected } = row;
                         return (
                             <tr key={id} className={selected ? "table-row-selected" : "table-row-non-selected"} onClick={props.handleFormRowClick.bind(this, id)}>
                                 <td>

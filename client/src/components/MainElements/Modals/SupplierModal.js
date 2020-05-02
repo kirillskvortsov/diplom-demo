@@ -35,6 +35,9 @@ function SupplierModal(props) {
     total += item.col * item.price;
   })
 
+  const suppliers = JSON.parse(localStorage.getItem('supplierCatalogTable'));
+  const supplier = suppliers.filter(i => i.name === data.supplier)[0];
+
   return (
     <Modal
       show={props.show}
@@ -116,7 +119,7 @@ function SupplierModal(props) {
                 onChange={props.handleChange}
                 name="tel"
                 type="tel"
-                value={data.tel}
+                value={data.tel || supplier !== undefined ? supplier.phone : '' }
                 required
               />
               <Form.Label className="rush-form-label">Телефон *</Form.Label>
@@ -127,7 +130,7 @@ function SupplierModal(props) {
                 onChange={props.handleChange}
                 name="inn"
                 type="number"
-                value={data.inn}
+                value={data.inn || supplier !== undefined ? supplier.inn : '' }
                 required
               />
               <Form.Label className="rush-form-label">ИНН *</Form.Label>
@@ -138,7 +141,7 @@ function SupplierModal(props) {
                 onChange={props.handleChange}
                 name="email"
                 type="email"
-                value={data.email}
+                value={data.email || supplier !== undefined ? supplier.email : '' }
               />
               <Form.Label className="rush-form-label">e-mail</Form.Label>
             </Form.Group>
@@ -148,7 +151,7 @@ function SupplierModal(props) {
                 onChange={props.handleChange}
                 name="kpp"
                 type="number"
-                value={data.kpp}
+                value={data.kpp || supplier !== undefined ? supplier.kpp: ''}
                 required
               />
               <Form.Label className="rush-form-label">КПП</Form.Label>

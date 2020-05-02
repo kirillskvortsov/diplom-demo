@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import SupplierCatalogFormTable from '../Tables/SupplierCatalogFormTable';
 
 function SupplierCatalogModal(props) {
   const data = props.data[0] ||
@@ -13,6 +14,15 @@ function SupplierCatalogModal(props) {
       kpp: '',
       bank: '',
       selected: false,
+      time: 0,
+      parts: [
+        {
+          art: '',
+          desc: '',
+          price: 0,
+          selected: false,
+        }
+      ]
     }];
 
   return (
@@ -108,11 +118,31 @@ function SupplierCatalogModal(props) {
               />
               <Form.Label className="rush-form-label">Банковский счёт</Form.Label>
             </Form.Group>
+            <Form.Group className="rush-form-group">
+              <Form.Control
+                className="rush-form-input"
+                onChange={props.handleChange}
+                name="time"
+                type="text"
+                value={data.time + " дня"}
+                required
+                disabled
+              />
+              <Form.Label className="rush-form-label">Время доставки</Form.Label>
+            </Form.Group>
           </div>
+          <h3 className="rush-form-table-header">Список запчастей</h3>
+          <SupplierCatalogFormTable
+            data={data.parts}
+            supplier={data.supplier}
+            handleTableChange={props.handleTableChange}
+            handleFormDeleteButtonClick={props.handleFormDeleteButtonClick}
+            handleFormRowClick={props.handleFormRowClick}
+          />
         </Modal.Body>
         <Modal.Footer className="client-form-footer">
-          <Button onClick={props.onHide} className="client-form-btn">Написать</Button>
-          <Button onClick={props.onHide} className="client-form-btn">Позвонить</Button>
+          <Button onClick={props.handleAddClick} className="rush-form-btn rush-form-btn-new">Добавить строку</Button>
+          <Button onClick={props.handleFormDeleteButtonClick} className="rush-form-btn rush-form-btn-new">Удалить строку</Button>
           <Button type="submit" className="client-form-btn">Сохранить</Button>
         </Modal.Footer>
       </Form>

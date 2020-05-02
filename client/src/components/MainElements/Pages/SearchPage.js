@@ -20,6 +20,7 @@ class SearchPage extends React.Component {
                     supp: 'VAG',
                     price: 3849,
                     desc: 'Блок ксеноновой лампы Skoda, VW, Audi',
+                    area: 1,
                     selected: false
                 },
                 {
@@ -30,6 +31,7 @@ class SearchPage extends React.Component {
                     supp: 'VAG',
                     price: 692,
                     desc: 'Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat',
+                    area: 1,
                     selected: false
                 },
                 {
@@ -40,6 +42,7 @@ class SearchPage extends React.Component {
                     supp: 'VAG',
                     price: 879,
                     desc: 'Трубка тормозная Skoda, VW, Audi, Seat',
+                    area: 1,
                     selected: false
                 },
                 {
@@ -50,6 +53,7 @@ class SearchPage extends React.Component {
                     supp: 'VAG',
                     price: 9214,
                     desc: 'Бампер задний Skoda Octavia (A7) 2013>',
+                    area: 2,
                     selected: false
                 },
                 {
@@ -60,6 +64,7 @@ class SearchPage extends React.Component {
                     supp: 'VAG',
                     price: 3167,
                     desc: 'Амортизатор передний Skoda, VW, Audi, Seat',
+                    area: 1,
                     selected: false
                 },
             ],
@@ -71,6 +76,7 @@ class SearchPage extends React.Component {
                 supp: '',
                 price: 0,
                 desc: '',
+                area: 0,
                 selected: false,
             },
             value: '',
@@ -191,6 +197,7 @@ class SearchPage extends React.Component {
                 supp: '',
                 price: 0,
                 desc: '',
+                area: 0,
                 selected: false
             }],
             modalShow: bool,

@@ -18,7 +18,7 @@ function PlanFormTable(props) {
                 </thead>
                 <tbody>
                     {props.data !== undefined ? props.data.map((row, index) => {
-                        const { id, art, col, desc, price, date, supp, selected } = row;
+                        const { id, art, col, price, date, supp, selected } = row;
                         return (
                             <tr key={id} className={selected ? "table-row-selected" : "table-row-non-selected"} onClick={props.handleFormRowClick.bind(this, id)}>
                                 <td>

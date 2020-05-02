@@ -92,6 +92,18 @@ function SearchModal(props) {
                             <Form.Control
                                 className="rush-form-input"
                                 onChange={props.handleChange}
+                                name="area"
+                                type="number"
+                                min="1"
+                                value={data.area}
+                                required
+                            />
+                            <Form.Label className="rush-form-label">Занимаемая площадь, м<sup>2</sup></Form.Label>
+                        </Form.Group>
+                        <Form.Group className="rush-form-group">
+                            <Form.Control
+                                className="rush-form-input"
+                                onChange={props.handleChange}
                                 name="desc"
                                 type="text"
                                 value={data.desc}

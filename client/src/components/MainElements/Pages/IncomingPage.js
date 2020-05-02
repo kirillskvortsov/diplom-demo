@@ -23,7 +23,7 @@ class IncomingPage extends React.Component {
                     number: "Н000341",
                     date1: "2020-02-14",
                     supplier: 'ТТС',
-                    status: "Принято, проверено",
+                    status: "Принято",
                     parts: [
                         {
                             id: 1,
@@ -41,7 +41,7 @@ class IncomingPage extends React.Component {
                     number: "Н000342",
                     date1: "2020-02-15",
                     supplier: 'ТТС',
-                    status: "Принято, проверено",
+                    status: "Принято",
                     parts: [
                         {
                             id: 3,
@@ -59,7 +59,7 @@ class IncomingPage extends React.Component {
                     number: "Н000343",
                     date1: "2020-03-01",
                     supplier: 'ТТС',
-                    status: "Принято, ожидает проверки",
+                    status: "Не принято",
                     parts: [
                         {
                             id: 5,
@@ -85,7 +85,7 @@ class IncomingPage extends React.Component {
                     number: "Н000344",
                     date1: "2020-02-01",
                     supplier: 'ЕвроАвто',
-                    status: "Принято, ожидает проверки",
+                    status: "Не принято",
                     parts: [
                         {
                             id: 7,

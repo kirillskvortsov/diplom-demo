@@ -17,7 +17,7 @@ function RushFormTable(props) {
                 </thead>
                 <tbody>
                     {props.data !== undefined ? props.data.map((row, index) => {
-                        const { id, art, col, desc, price, supp, selected } = row;
+                        const { id, art, col, price, supp, selected } = row;
                         return (
                             <tr key={id} className={selected ? "table-row-selected" : "table-row-non-selected"} onClick={props.handleFormRowClick.bind(this, id)}>
                                 <td>
