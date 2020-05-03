@@ -2,32 +2,26 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 
 function DemandPrognosisTable(props) {
-    return(
+    return (
         <div className="table-container demand-table-container">
             <Table striped bordered hover className="table">
                 <thead>
                     <tr className="table-header">
-                        <th>Артикул</th>
-                        <th>Описание</th>
-                        <th>Количество</th>
-                        <th>Необходимо докупить</th>
+                        <th className="width-100 vertical-align">Артикул</th>
+                        <th className="width-300 vertical-align">Описание</th>
+                        <th className="width-100 vertical-align">Количество</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {props.data.map(i => {
+                        return (
+                            <tr>
+                                <td>{i.art}</td>
+                                <td>{i.desc}</td>
+                                <td>{i.cols}</td>
+                            </tr>
+                        )})}
                     <tr>
-                        <td>1987263</td>
-                        <td>Фара левая SKODA OCTAVIA (2013>)</td>
-                        <td>25</td>
-                        <td>23</td>
-                    </tr>
-                    <tr>
-                        <td>1652312</td>
-                        <td>Фара правая SKODA OCTAVIA (2013>)</td>
-                        <td>24</td>
-                        <td>24</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
@@ -36,16 +30,8 @@ function DemandPrognosisTable(props) {
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
-                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
@@ -54,10 +40,8 @@ function DemandPrognosisTable(props) {
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
-                        <td>&nbsp;</td>
                     </tr>
                     <tr>
-                        <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
