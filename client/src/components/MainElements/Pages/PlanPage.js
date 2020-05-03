@@ -22,7 +22,7 @@ class PlanPage extends React.Component {
                     id: 1,
                     number: "00031",
                     date1: "2020-02-01",
-                    date2: "2020-02-07",
+                    date2: "2020-02-03",
                     status: "Доставлено",
                     parts: [
                         {
@@ -32,7 +32,7 @@ class PlanPage extends React.Component {
                             col: 4,
                             supp: "ЕвроАвто",
                             date: '2020-02-07',
-                            price: 3849,
+                            price: 5773,
                             selected: false
                         },
                         {
@@ -42,7 +42,7 @@ class PlanPage extends React.Component {
                             col: 6,
                             supp: "ЕвроАвто",
                             date: '2020-02-07',
-                            price: 692,
+                            price: 968,
                             selected: false
                         }
                     ],
@@ -52,7 +52,7 @@ class PlanPage extends React.Component {
                     id: 2,
                     number: "00032",
                     date1: "2020-03-01",
-                    date2: "2020-03-06",
+                    date2: "2020-03-04",
                     status: "Не доставлено",
                     parts: [
                         {
@@ -62,7 +62,7 @@ class PlanPage extends React.Component {
                             col: 6,
                             supp: "ТТС",
                             date: '2020-03-06',
-                            price: 879,
+                            price: 1142,
                             selected: false
                         },
                         {
@@ -72,7 +72,7 @@ class PlanPage extends React.Component {
                             col: 8,
                             supp: "ТТС",
                             date: '2020-03-06',
-                            price: 9214,
+                            price: 11056,
                             selected: false
                         }
                     ],
@@ -92,7 +92,7 @@ class PlanPage extends React.Component {
                             col: 12,
                             supp: "ТТС",
                             date: '2020-04-04',
-                            price: 3167,
+                            price: 3800,
                             selected: false
                         },
                         {
@@ -102,7 +102,7 @@ class PlanPage extends React.Component {
                             col: 13,
                             supp: "ТТС",
                             date: '2020-04-04',
-                            price: 3849,
+                            price: 4233,
                             selected: false
                         },
                     ],

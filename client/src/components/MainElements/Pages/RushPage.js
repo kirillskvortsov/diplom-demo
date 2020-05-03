@@ -25,7 +25,7 @@ class RushPage extends React.Component {
                     phone: "89876543211",
                     email: "ivanov@mail.ru",
                     date1: "2020-02-14",
-                    date2: "2020-02-17",
+                    date2: "2020-02-16",
                     supplier: "Поставщик",
                     status: "Доставлено",
                     parts: [
@@ -35,7 +35,7 @@ class RushPage extends React.Component {
                             desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 1,
                             supp: "ЕвроАвто",
-                            price: 3849,
+                            price: 5773,
                             selected: false
                         }
                     ],
@@ -48,7 +48,7 @@ class RushPage extends React.Component {
                     phone: "89812343211",
                     email: "petrov@mail.ru",
                     date1: "2020-02-15",
-                    date2: "2020-02-18",
+                    date2: "2020-02-19",
                     supplier: "Поставщик",
                     status: "Не доставлено",
                     parts: [
@@ -58,7 +58,7 @@ class RushPage extends React.Component {
                             desc: "Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat",
                             col: 2,
                             supp: "ТТС",
-                            price: 692,
+                            price: 830,
                             selected: false
                         }
                     ],
@@ -71,7 +71,7 @@ class RushPage extends React.Component {
                     phone: "89817893211",
                     email: "sidorov@mail.ru",
                     date1: "2020-02-15",
-                    date2: "2020-02-18",
+                    date2: "2020-02-17",
                     supplier: "Склад",
                     status: "Не доставлено",
                     parts: [
@@ -81,7 +81,7 @@ class RushPage extends React.Component {
                             desc: "Бампер задний Skoda Octavia (A7) 2013",
                             col: 1,
                             supp: "ЕвроАвто",
-                            price: 9214,
+                            price: 13821,
                             selected: false
                         }
                     ],

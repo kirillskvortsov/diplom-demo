@@ -59,7 +59,7 @@ class DemandPrognosisPage extends React.Component {
                     <h1 className="page-header">Прогноз спроса на {this.state.date}</h1>
                 </div>
                 <h4 className="demand-table-header">Сезонный коэффициент: {JSON.parse(localStorage.getItem('coef'))}</h4>
-                <h4 className="demand-table-header">Точка заказа: {JSON.parse(localStorage.getItem('percent'))[0].days} дней</h4>
+                <h4 className="demand-table-header">Точка заказа: {JSON.parse(localStorage.getItem('order'))[0].days} дней</h4>
                 <h4 className="demand-table-header">Свободного места на складе: {this.state.area} м<sup>2</sup> ({(this.state.area / 1500 * 100).toFixed(2)}%)</h4>
                 <h4 className="sub-header">Список запчастей</h4>
                 <DemandPrognosisTable 

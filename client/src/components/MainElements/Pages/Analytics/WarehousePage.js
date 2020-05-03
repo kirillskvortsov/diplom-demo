@@ -14,15 +14,19 @@ class WarehousePage extends React.Component {
     }
 
     componentDidMount() {
-        let newAreaUsed = 0;
-        const items = JSON.parse(localStorage.getItem('searchTable'));
-        items.forEach(i => {
-            newAreaUsed += i.area * i.cols;
-        });
-        this.setState({
-            areaUsed: newAreaUsed
-        })
-        localStorage.setItem("area", newAreaUsed);
+        if (JSON.parse(localStorage.getItem('searchTable'))) {
+            let newAreaUsed = 0;
+            const items = JSON.parse(localStorage.getItem('searchTable'));
+            items.forEach(i => {
+                newAreaUsed += i.area * i.cols;
+            });
+            this.setState({
+                areaUsed: newAreaUsed
+            })
+            localStorage.setItem("area", newAreaUsed);
+        } else {
+            localStorage.setItem("area", this.state.areaUsed);
+        }
     }
 
     componentDidUpdate() {

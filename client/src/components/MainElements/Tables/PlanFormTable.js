@@ -60,6 +60,7 @@ function PlanFormTable(props) {
                                     >
                                         <option value="ЕвроАвто">ЕвроАвто</option>
                                         <option value="ТТС">ТТС</option>
+                                        <option value="VAG">VAG</option>
                                     </select>
                                 </td>
                                 <td>

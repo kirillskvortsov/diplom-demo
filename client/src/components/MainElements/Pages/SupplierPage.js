@@ -36,7 +36,7 @@ class SupplierPage extends React.Component {
                             art: "8K0941597B",
                             desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 1,
-                            price: 3849,
+                            price: 4233,
                             selected: false
                         },
                     ],
@@ -60,7 +60,7 @@ class SupplierPage extends React.Component {
                             art: "5Q0201801",
                             desc: "Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat",
                             col: 2,
-                            price: 692,
+                            price: 830,
                             selected: false
                         }
                     ],
@@ -84,7 +84,7 @@ class SupplierPage extends React.Component {
                             art: "5Q1614724",
                             desc: "Трубка тормозная Skoda, VW, Audi, Seat",
                             col: 6,
-                            price: 879,
+                            price: 1142,
                             selected: false
                         },
                         {
@@ -106,7 +106,7 @@ class SupplierPage extends React.Component {
                     inn: "7408024716",
                     kpp: "262345739",
                     date1: "2020-02-01",
-                    date2: "2020-02-07",
+                    date2: "2020-02-03",
                     contract: 'Договор № 561',
                     supplier: 'ЕвроАвто',
                     status: "Отправлено",
@@ -116,7 +116,7 @@ class SupplierPage extends React.Component {
                             art: "8K0941597B",
                             desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 4,
-                            price: 3849,
+                            price: 5773,
                             selected: false
                         },
                         {
@@ -148,7 +148,7 @@ class SupplierPage extends React.Component {
                             art: "5Q0413023FH",
                             desc: "Амортизатор передний Skoda, VW, Audi, Seat",
                             col: 12,
-                            price: 3167,
+                            price: 3800,
                             selected: false
                         },
                         {
@@ -156,7 +156,7 @@ class SupplierPage extends React.Component {
                             art: "8K0941597B",
                             desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 13,
-                            price: 3849,
+                            price: 4233,
                             selected: false
                         }
                     ],

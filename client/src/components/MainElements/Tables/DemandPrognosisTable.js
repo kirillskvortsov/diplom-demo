@@ -13,9 +13,9 @@ function DemandPrognosisTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.data.map(i => {
+                    {props.data.map((i, key) => {
                         return (
-                            <tr>
+                            <tr key={key}>
                                 <td>{i.art}</td>
                                 <td>{i.desc}</td>
                                 <td>{i.cols}</td>

@@ -15,7 +15,7 @@ class HomePage extends React.Component {
                     phone: "89876543211",
                     email: "ivanov@mail.ru",
                     date1: "2020-02-14",
-                    date2: "2020-02-17",
+                    date2: "2020-02-16",
                     supplier: "Поставщик",
                     status: "Доставлено",
                     parts: [
@@ -25,7 +25,7 @@ class HomePage extends React.Component {
                             desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 1,
                             supp: "ЕвроАвто",
-                            price: 3849,
+                            price: 5773,
                             selected: false
                         }
                     ],
@@ -38,7 +38,7 @@ class HomePage extends React.Component {
                     phone: "89812343211",
                     email: "petrov@mail.ru",
                     date1: "2020-02-15",
-                    date2: "2020-02-18",
+                    date2: "2020-02-19",
                     supplier: "Поставщик",
                     status: "Не доставлено",
                     parts: [
@@ -48,7 +48,7 @@ class HomePage extends React.Component {
                             desc: "Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat",
                             col: 2,
                             supp: "ТТС",
-                            price: 692,
+                            price: 830,
                             selected: false
                         }
                     ],
@@ -61,7 +61,7 @@ class HomePage extends React.Component {
                     phone: "89817893211",
                     email: "sidorov@mail.ru",
                     date1: "2020-02-15",
-                    date2: "2020-02-18",
+                    date2: "2020-02-17",
                     supplier: "Склад",
                     status: "Не доставлено",
                     parts: [
@@ -71,18 +71,19 @@ class HomePage extends React.Component {
                             desc: "Бампер задний Skoda Octavia (A7) 2013",
                             col: 1,
                             supp: "ЕвроАвто",
-                            price: 9214,
+                            price: 13821,
                             selected: false
                         }
                     ],
-                }
+                    selected: false
+                },
             ],
             planTable: [
                 {
                     id: 1,
                     number: "00031",
                     date1: "2020-02-01",
-                    date2: "2020-02-07",
+                    date2: "2020-02-03",
                     status: "Доставлено",
                     parts: [
                         {
@@ -92,7 +93,7 @@ class HomePage extends React.Component {
                             col: 4,
                             supp: "ЕвроАвто",
                             date: '2020-02-07',
-                            price: 3849,
+                            price: 5773,
                             selected: false
                         },
                         {
@@ -102,7 +103,7 @@ class HomePage extends React.Component {
                             col: 6,
                             supp: "ЕвроАвто",
                             date: '2020-02-07',
-                            price: 692,
+                            price: 968,
                             selected: false
                         }
                     ],
@@ -112,7 +113,7 @@ class HomePage extends React.Component {
                     id: 2,
                     number: "00032",
                     date1: "2020-03-01",
-                    date2: "2020-03-06",
+                    date2: "2020-03-04",
                     status: "Не доставлено",
                     parts: [
                         {
@@ -122,7 +123,7 @@ class HomePage extends React.Component {
                             col: 6,
                             supp: "ТТС",
                             date: '2020-03-06',
-                            price: 879,
+                            price: 1142,
                             selected: false
                         },
                         {
@@ -132,7 +133,7 @@ class HomePage extends React.Component {
                             col: 8,
                             supp: "ТТС",
                             date: '2020-03-06',
-                            price: 9214,
+                            price: 11056,
                             selected: false
                         }
                     ],
@@ -152,7 +153,7 @@ class HomePage extends React.Component {
                             col: 12,
                             supp: "ТТС",
                             date: '2020-04-04',
-                            price: 3167,
+                            price: 3800,
                             selected: false
                         },
                         {
@@ -162,7 +163,7 @@ class HomePage extends React.Component {
                             col: 13,
                             supp: "ТТС",
                             date: '2020-04-04',
-                            price: 3849,
+                            price: 4233,
                             selected: false
                         },
                     ],
@@ -178,6 +179,7 @@ class HomePage extends React.Component {
                     supp: 'VAG',
                     price: 3849,
                     desc: 'Блок ксеноновой лампы Skoda, VW, Audi',
+                    area: 1,
                     selected: false
                 },
                 {
@@ -188,6 +190,7 @@ class HomePage extends React.Component {
                     supp: 'VAG',
                     price: 692,
                     desc: 'Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat',
+                    area: 1,
                     selected: false
                 },
                 {
@@ -198,6 +201,7 @@ class HomePage extends React.Component {
                     supp: 'VAG',
                     price: 879,
                     desc: 'Трубка тормозная Skoda, VW, Audi, Seat',
+                    area: 1,
                     selected: false
                 },
                 {
@@ -208,6 +212,7 @@ class HomePage extends React.Component {
                     supp: 'VAG',
                     price: 9214,
                     desc: 'Бампер задний Skoda Octavia (A7) 2013>',
+                    area: 2,
                     selected: false
                 },
                 {
@@ -218,6 +223,7 @@ class HomePage extends React.Component {
                     supp: 'VAG',
                     price: 3167,
                     desc: 'Амортизатор передний Skoda, VW, Audi, Seat',
+                    area: 1,
                     selected: false
                 },
             ],
@@ -234,7 +240,7 @@ class HomePage extends React.Component {
                             art: "8K0941597B",
                             desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 1,
-                            price: 3849,
+                            price: 4233,
                             selected: false
                         },
                     ],
@@ -252,7 +258,7 @@ class HomePage extends React.Component {
                             art: "5Q0201801",
                             desc: "Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat",
                             col: 2,
-                            price: 692,
+                            price: 830,
                             selected: false
                         }
                     ],
@@ -270,7 +276,7 @@ class HomePage extends React.Component {
                             art: "5Q1614724",
                             desc: "Трубка тормозная Skoda, VW, Audi, Seat",
                             col: 6,
-                            price: 879,
+                            price: 1142,
                             selected: false
                         },
                         {
@@ -278,7 +284,7 @@ class HomePage extends React.Component {
                             art: "5EU807421B",
                             desc: "Бампер задний Skoda Octavia (A7) 2013>",
                             col: 8,
-                            price: 9214,
+                            price: 11056,
                             selected: false
                         }
                     ],
@@ -296,7 +302,7 @@ class HomePage extends React.Component {
                             art: "8K0941597B",
                             desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 4,
-                            price: 3849,
+                            price: 5773,
                             selected: false
                         },
                         {
@@ -356,7 +362,7 @@ class HomePage extends React.Component {
                             art: "8K0941597B",
                             desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 1,
-                            price: 3849,
+                            price: 4233,
                             selected: false
                         },
                     ],
@@ -380,7 +386,7 @@ class HomePage extends React.Component {
                             art: "5Q0201801",
                             desc: "Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat",
                             col: 2,
-                            price: 692,
+                            price: 830,
                             selected: false
                         }
                     ],
@@ -404,7 +410,7 @@ class HomePage extends React.Component {
                             art: "5Q1614724",
                             desc: "Трубка тормозная Skoda, VW, Audi, Seat",
                             col: 6,
-                            price: 879,
+                            price: 1142,
                             selected: false
                         },
                         {
@@ -426,7 +432,7 @@ class HomePage extends React.Component {
                     inn: "7408024716",
                     kpp: "262345739",
                     date1: "2020-02-01",
-                    date2: "2020-02-07",
+                    date2: "2020-02-03",
                     contract: 'Договор № 561',
                     supplier: 'ЕвроАвто',
                     status: "Отправлено",
@@ -436,7 +442,7 @@ class HomePage extends React.Component {
                             art: "8K0941597B",
                             desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 4,
-                            price: 3849,
+                            price: 5773,
                             selected: false
                         },
                         {
@@ -468,7 +474,7 @@ class HomePage extends React.Component {
                             art: "5Q0413023FH",
                             desc: "Амортизатор передний Skoda, VW, Audi, Seat",
                             col: 12,
-                            price: 3167,
+                            price: 3800,
                             selected: false
                         },
                         {
@@ -476,7 +482,7 @@ class HomePage extends React.Component {
                             art: "8K0941597B",
                             desc: "Блок ксеноновой лампы Skoda, VW, Audi",
                             col: 13,
-                            price: 3849,
+                            price: 4233,
                             selected: false
                         }
                     ],
@@ -493,7 +499,40 @@ class HomePage extends React.Component {
                     inn: '8138281655',
                     kpp: '902545830',
                     bank: '5404 3695 5685 0873',
-                    selected: false
+                    selected: false,
+                    time: 2,
+                    parts: [
+                        {
+                            art: '8K0941597B',
+                            desc: 'Блок ксеноновой лампы Skoda, VW, Audi',
+                            price: Math.floor(3849 * 1.5),
+                            selected: false,
+                        },
+                        {
+                            art: '5Q0201801',
+                            desc: 'Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat',
+                            price: Math.floor(692 * 1.4),
+                            selected: false,
+                        },
+                        {
+                            art: '5Q1614724',
+                            desc: 'Трубка тормозная Skoda, VW, Audi, Seat',
+                            price: Math.floor(879 * 1.5),
+                            selected: false,
+                        },
+                        {
+                            art: '5EU807421B',
+                            desc: 'Бампер задний Skoda Octavia (A7) 2013>',
+                            price: Math.floor(9214 * 1.5),
+                            selected: false,
+                        },
+                        {
+                            art: '5Q0413023FH',
+                            desc: 'Амортизатор передний Skoda, VW, Audi, Seat',
+                            price: Math.floor(3167 * 1.3),
+                            selected: false,
+                        },
+                    ]
                 },
                 {
                     id: 2,
@@ -504,7 +543,100 @@ class HomePage extends React.Component {
                     inn: '4914580055',
                     kpp: '342901918',
                     bank: '5404 3641 7640 6131',
-                    selected: false
+                    selected: false,
+                    time: 4,
+                    parts: [
+                        {
+                            art: '8K0941597B',
+                            desc: 'Блок ксеноновой лампы Skoda, VW, Audi',
+                            price: Math.floor(3849 * 1.1),
+                            selected: false,
+                        },
+                        {
+                            art: '5Q0201801',
+                            desc: 'Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat',
+                            price: Math.floor(692 * 1.2),
+                            selected: false,
+                        },
+                        {
+                            art: '5Q1614724',
+                            desc: 'Трубка тормозная Skoda, VW, Audi, Seat',
+                            price: Math.floor(879 * 1.3),
+                            selected: false,
+                        },
+                        {
+                            art: '5EU807421B',
+                            desc: 'Бампер задний Skoda Octavia (A7) 2013>',
+                            price: Math.floor(9214 * 1.2),
+                            selected: false,
+                        },
+                        {
+                            art: '5Q0413023FH',
+                            desc: 'Амортизатор передний Skoda, VW, Audi, Seat',
+                            price: Math.floor(3167 * 1.2),
+                            selected: false,
+                        },
+                    ]
+                },
+                {
+                    id: 3,
+                    name: "VAG",
+                    phone: '8123451928',
+                    email: 'vag@mail.ru',
+                    address: 'РТ, Казань, Ямашева 88',
+                    inn: '6806194578',
+                    kpp: '446945036',
+                    bank: '5404 3671 1493 4155',
+                    selected: false,
+                    time: 3,
+                    parts: [
+                        {
+                            art: '8K0941597B',
+                            desc: 'Блок ксеноновой лампы Skoda, VW, Audi',
+                            price: Math.floor(3849 * 1.6),
+                            selected: false,
+                        },
+                        {
+                            art: '5Q0201801',
+                            desc: 'Абсорбер (фильтр угольный) Skoda, VW, Audi, Seat',
+                            price: Math.floor(692 * 1.1),
+                            selected: false,
+                        },
+                        {
+                            art: '5Q1614724',
+                            desc: 'Трубка тормозная Skoda, VW, Audi, Seat',
+                            price: Math.floor(879 * 1.5),
+                            selected: false,
+                        },
+                        {
+                            art: '5EU807421B',
+                            desc: 'Бампер задний Skoda Octavia (A7) 2013>',
+                            price: Math.floor(9214 * 1.2),
+                            selected: false,
+                        },
+                        {
+                            art: '5Q0413023FH',
+                            desc: 'Амортизатор передний Skoda, VW, Audi, Seat',
+                            price: Math.floor(3167 * 1.5),
+                            selected: false,
+                        },
+                    ]
+                },
+            ],
+            order: [
+                {
+                    id: 1,
+                    period: 2020,
+                    days: 40,
+                    stock: 15,
+                    percent: 2,
+                },
+                {
+                    id: 2,
+                    period: 2019,
+                    days: 34,
+                    stock: 20,
+                    percent: 4,
                 },
             ],
             supplierId: 10000001,
@@ -524,7 +656,8 @@ class HomePage extends React.Component {
             let area = 0;
             this.state.searchTable.forEach(i => area += i.area * i.cols );
             localStorage.setItem("area", JSON.stringify(area));
-            localStorage.setItem("area", JSON.stringify(this.state.coef));
+            localStorage.setItem("coef", JSON.stringify(this.state.coef));
+            localStorage.setItem("order", JSON.stringify(this.state.order));
         }
     }
 

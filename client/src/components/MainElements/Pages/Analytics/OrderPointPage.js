@@ -44,12 +44,12 @@ class OrderPointPage extends React.Component {
 
     componentDidMount() {
         this.setState({
-            table: localStorage.getItem('percent') ? JSON.parse(localStorage.getItem('percent')) : this.state.table
+            table: localStorage.getItem('order') ? JSON.parse(localStorage.getItem('order')) : this.state.table
         })
     }
 
     componentDidUpdate() {
-        localStorage.setItem('percent', JSON.stringify(this.state.table));
+        localStorage.setItem('order', JSON.stringify(this.state.table));
     }
 
     handleChange(e) {
