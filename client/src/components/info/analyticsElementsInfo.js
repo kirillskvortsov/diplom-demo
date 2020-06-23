@@ -1,46 +1,46 @@
 const info = [
-    {
-        id: 3,
-        alt: 'suppliers',
-        text: 'Поставщики',
-        anchor: "/SupplierCatalogPage",
-        srcCard: "assets/analytics/box.png"
-    }, 
-    {
-        id: 4,
-        alt: 'warehouse capacity',
-        text: 'Вместимость склада',
-        anchor: "/WarehousePage",
-        srcCard: "assets/analytics/warehouse.png"
-    }, 
-    {
-        id: 5,
-        alt: 'point of order',
-        text: 'Точка заказа',
-        anchor: "/OrderPointPage",
-        srcCard: "assets/analytics/refresh.png"
-    }, 
-    {
-        id: 6,
-        alt: 'demand prognosis',
-        text: 'Прогноз спроса',
-        anchor: "/DemandPrognosisPage",
-        srcCard: "assets/analytics/pie-chart.png"
-    }, 
-    {
-        id: 7,
-        alt: 'car park structure',
-        text: 'Структура автопарка в регионе',
-        anchor: "/CarParkPage",
-        srcCard: "assets/analytics/pickup-car.png"
-    }, 
-    {
-        id: 8,
-        alt: 'season',
-        text: 'Сезонный коэффициент',
-        anchor: "/SeasonPage",
-        srcCard: "assets/analytics/function.png"
-    }, 
+  {
+    id: 3,
+    alt: "suppliers",
+    text: "Поставщики",
+    anchor: "/SupplierCatalogPage",
+    srcCard: "assets/analytics/box.png",
+  },
+  {
+    id: 4,
+    alt: "warehouse capacity",
+    text: "Площади склада",
+    anchor: "/WarehousePage",
+    srcCard: "assets/analytics/warehouse.png",
+  },
+  {
+    id: 5,
+    alt: "point of order",
+    text: "Частота пополнения склада",
+    anchor: "/OrderPointPage",
+    srcCard: "assets/analytics/refresh.png",
+  },
+  {
+    id: 6,
+    alt: "demand prognosis",
+    text: "Прогноз спроса",
+    anchor: "/DemandPrognosisPage",
+    srcCard: "assets/analytics/pie-chart.png",
+  },
+  {
+    id: 7,
+    alt: "car park structure",
+    text: "Структура автопарка в регионе",
+    anchor: "/CarParkPage",
+    srcCard: "assets/analytics/pickup-car.png",
+  },
+  {
+    id: 8,
+    alt: "season",
+    text: "Сезонные коэффициенты",
+    anchor: "/SeasonPage",
+    srcCard: "assets/analytics/function.png",
+  },
 ];
 
 export default info;
