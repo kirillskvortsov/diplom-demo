@@ -18,10 +18,10 @@ function Main() {
   return (
     <Switch>
       <Route exact path="/">
-        <HomePage />
+        <SearchPage />
       </Route>
       <Route path="/diplom-demo">
-        <HomePage />
+        <SearchPage />
       </Route>
       <Route path="/SearchPage">
         <SearchPage />
