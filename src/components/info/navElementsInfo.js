@@ -4,7 +4,7 @@ const info = [
     alt: "home",
     text: "Домой",
     src: "assets/home.png",
-    anchor: "/",
+    anchor: "/HomePage",
     srcCard: "",
   },
   {
