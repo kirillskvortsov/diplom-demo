@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/diplom-demo/static/css/main.636616c2.chunk.css",
-    "main.js": "/diplom-demo/static/js/main.8224070a.chunk.js",
-    "main.js.map": "/diplom-demo/static/js/main.8224070a.chunk.js.map",
+    "main.js": "/diplom-demo/static/js/main.a6abe4ce.chunk.js",
+    "main.js.map": "/diplom-demo/static/js/main.a6abe4ce.chunk.js.map",
     "runtime-main.js": "/diplom-demo/static/js/runtime-main.92c731c9.js",
     "runtime-main.js.map": "/diplom-demo/static/js/runtime-main.92c731c9.js.map",
     "static/css/2.de424728.chunk.css": "/diplom-demo/static/css/2.de424728.chunk.css",
-    "static/js/2.15d0f95a.chunk.js": "/diplom-demo/static/js/2.15d0f95a.chunk.js",
-    "static/js/2.15d0f95a.chunk.js.map": "/diplom-demo/static/js/2.15d0f95a.chunk.js.map",
+    "static/js/2.38a8575a.chunk.js": "/diplom-demo/static/js/2.38a8575a.chunk.js",
+    "static/js/2.38a8575a.chunk.js.map": "/diplom-demo/static/js/2.38a8575a.chunk.js.map",
     "index.html": "/diplom-demo/index.html",
-    "precache-manifest.671dc0e85a13126458913a845798f67a.js": "/diplom-demo/precache-manifest.671dc0e85a13126458913a845798f67a.js",
+    "precache-manifest.aaf9c8d1ab59fae5109c6ed9e6802264.js": "/diplom-demo/precache-manifest.aaf9c8d1ab59fae5109c6ed9e6802264.js",
     "service-worker.js": "/diplom-demo/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/diplom-demo/static/css/2.de424728.chunk.css.map",
     "static/css/main.636616c2.chunk.css.map": "/diplom-demo/static/css/main.636616c2.chunk.css.map",
-    "static/js/2.15d0f95a.chunk.js.LICENSE.txt": "/diplom-demo/static/js/2.15d0f95a.chunk.js.LICENSE.txt"
+    "static/js/2.38a8575a.chunk.js.LICENSE.txt": "/diplom-demo/static/js/2.38a8575a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.92c731c9.js",
     "static/css/2.de424728.chunk.css",
-    "static/js/2.15d0f95a.chunk.js",
+    "static/js/2.38a8575a.chunk.js",
     "static/css/main.636616c2.chunk.css",
-    "static/js/main.8224070a.chunk.js"
+    "static/js/main.a6abe4ce.chunk.js"
   ]
 }
