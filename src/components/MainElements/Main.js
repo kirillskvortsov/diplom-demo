@@ -18,7 +18,7 @@ function Main() {
   return (
     <Switch>
       <Route path="/diplom-demo">
-        <Redirect to="/HomePage" />
+        <HomePage />
       </Route>
       <Route exact path="/">
         <HomePage />
