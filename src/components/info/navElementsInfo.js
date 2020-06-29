@@ -13,7 +13,7 @@ const info = [
     text: "Поиск",
     src: "assets/search.png",
     anchor: "/SearchPage",
-    srcCard: "assets/background/search.png",
+    srcCard: "assets/bg_search.png",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ const info = [
     text: "Срочные заказы",
     src: "assets/timer.png",
     anchor: "/RushPage",
-    srcCard: "assets/background/rush.png",
+    srcCard: "assets/bg_rush.png",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ const info = [
     text: "Плановые заказы",
     src: "assets/plan.png",
     anchor: "/PlanPage",
-    srcCard: "assets/background/plan.png",
+    srcCard: "assets/bg_plan.png",
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ const info = [
     text: "Заказы поставщику",
     src: "assets/delivery.png",
     anchor: "/SupplierPage",
-    srcCard: "assets/background/supplier.png",
+    srcCard: "assets/bg_supplier.png",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const info = [
     text: "Приходные накладные",
     src: "assets/incoming.png",
     anchor: "/IncomingPage",
-    srcCard: "assets/background/incoming.png",
+    srcCard: "assets/bg_incoming.png",
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ const info = [
     text: "Аналитика",
     src: "assets/chart.png",
     anchor: "/AnalyticsPage",
-    srcCard: "assets/background/analytics.png",
+    srcCard: "assets/bg_analytics.png",
   },
 ];
 
