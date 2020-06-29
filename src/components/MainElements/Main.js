@@ -17,10 +17,10 @@ import WarehousePage from "./Pages/Analytics/WarehousePage";
 function Main() {
   return (
     <Switch>
-      <Route path="/diplom-demo">
+      <Route exact path="/">
         <HomePage />
       </Route>
-      <Route exact path="/">
+      <Route path="/diplom-demo">
         <HomePage />
       </Route>
       <Route path="/SearchPage">
