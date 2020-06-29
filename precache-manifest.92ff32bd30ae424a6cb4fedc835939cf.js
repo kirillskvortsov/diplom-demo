@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8a32729b2799b6eeefb4b13a1fc8573a",
+    "revision": "3bf059a169fb662c1a82664ad5661cb3",
     "url": "/diplom-demo/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/diplom-demo/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "0542fe0d599bd3b3f685",
+    "revision": "35a2cada8247fc55dfe9",
     "url": "/diplom-demo/static/css/main.636616c2.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/diplom-demo/static/js/2.15d0f95a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0542fe0d599bd3b3f685",
-    "url": "/diplom-demo/static/js/main.cc62bf0f.chunk.js"
+    "revision": "35a2cada8247fc55dfe9",
+    "url": "/diplom-demo/static/js/main.fdd3c4ef.chunk.js"
   },
   {
     "revision": "5482505119878795479d",
