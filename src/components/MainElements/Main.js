@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import SearchPage from "./Pages/SearchPage";
 import RushPage from "./Pages/RushPage";
@@ -17,6 +17,9 @@ import WarehousePage from "./Pages/Analytics/WarehousePage";
 function Main() {
   return (
     <Switch>
+      <Route exact path="/">
+        <Redirect to="HomePage" />
+      </Route>
       <Route path="/HomePage">
         <HomePage />
       </Route>
