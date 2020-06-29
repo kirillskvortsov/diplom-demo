@@ -17,7 +17,7 @@ import WarehousePage from "./Pages/Analytics/WarehousePage";
 function Main() {
   return (
     <Switch>
-      <Route exact path="/diplom-demo/">
+      <Route path="/diplom-demo/">
         <Redirect to="/HomePage" />
       </Route>
       <Route exact path="/">
